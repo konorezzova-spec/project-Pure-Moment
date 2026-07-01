@@ -52,11 +52,16 @@
   line-height: 1.5;
   font-weight: 400;
   color: var(--color-scheme-1-text);
+  background-color: var(--color-scheme-2-background);
 }
 
 body {
-  display: flex;
-  flex-direction: column;
   margin: 0;
 }
 
+section {
+  padding: 64px 0;
+
+@media only screen and (min-width: 1440px) {padding: 92px 0;}
+
+}
