@@ -55,13 +55,11 @@
   background-color: var(--color-scheme-2-background);
 }
 
-body {
-  margin: 0;
-}
-
 section {
   padding: 64px 0;
-
-@media only screen and (min-width: 1440px) {padding: 92px 0;}
-
+}
+@media only screen and (min-width: 1440px){
+  section {
+    padding: 92px 0;
+  }
 }
