@@ -3,3 +3,13 @@
     padding-top: 64px;
     padding-bottom: 64px;
 }
+
+.contacts_section-title {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contacts-address {
+    margin: 0 auto;
+    text-align: center;
+}
