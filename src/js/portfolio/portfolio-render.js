@@ -6,13 +6,13 @@ const loader = document.querySelector('.loader');
 
 export function createCategoryButtons(categoriesData) {
   const markup = categoriesData.map(category => {
-    return `<li><button class="portfolio_category_btn" data-id="${category._id}">${category.category}</button></li>`;
+    return `<li><button class="portfolio-category-btn" data-id="${category._id}">${category.category}</button></li>`;
   });
   categories.insertAdjacentHTML('beforeend', markup.join(''));
 }
 
 function createGalleryItems({ img, title }) {
-  return `<li class="portfolio_gallery_item"><a href="${img}"><img src="${img}" alt="${title}"></a></li>`;
+  return `<li class="portfolio-gallery-item"><a href="${img}"><img class="portfolio-img"src="${img}" alt="${title}"></a></li>`;
  }
 
 export function createGallery(itemsData) {

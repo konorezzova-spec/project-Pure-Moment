@@ -3,15 +3,16 @@ import { createCategoryButtons, createGallery, clearGallery, showLoadMoreBtn, hi
 
 const portfolioGallery = document.querySelector('.portfolio-gallery');
 const categoryButtonsContainer = document.querySelector('.portfolio-categories');
+const loadMoreButton = document.querySelector('.portfolio-load-more');
 
 const categories = document.querySelector('.portfolio-categories');
 
 let currentCategoryId = '';
 let currentPage = 1;
-
-const loadMoreButton = document.querySelector('.portfolio-load-more');
+let loadedItemsCount = 0;
 
 categoryButtonsContainer.addEventListener('click', handleCategoryClick);
+loadMoreButton.addEventListener('click', handleLoadMoreItems);
 
 initializePortfolio();
 loadGallery(1, 9);
@@ -22,15 +23,13 @@ async function handleCategoryClick(event) {
     const categoryId = event.target.dataset.id || '';
     currentCategoryId = categoryId;
     currentPage = 1;
-    try {
-      clearGallery();
-      await loadGallery(currentPage, 9, currentCategoryId);
-    } catch (error) {
-      console.error("Error loading gallery:", error);
-    }
+    loadedItemsCount = 0;
+
+    clearGallery();
+    loadGallery(currentPage, 9, currentCategoryId);
+    
   }
 };
-
 
 async function initializePortfolio() {
   try {
@@ -47,10 +46,31 @@ async function loadGallery(page, limit, categoryId = '') {
     const galleryItems = await getPortfolioGallery(page, limit, categoryId);
     
     createGallery(galleryItems.weddingPhotos);
+
+    loadedItemsCount += limit;
     
+    checkLoadedItemsCount(galleryItems.totalItems, loadedItemsCount);
+
   } catch (error) {
     console.error("Error loading gallery:", error);
   }
 }
 
+function handleLoadMoreItems() {
+  currentPage += 1;
+  loadGallery(currentPage, 3, currentCategoryId);
+}
 
+function checkLoadedItemsCount(totalItems, loadedItemsCount) {
+  // const totalItems = parseInt(portfolioGallery.dataset.totalItems, 10);
+  // loadedItemsCount = portfolioGallery.children.length;
+  console.log('Total items:', totalItems);
+  console.log('Loaded items count:', loadedItemsCount);
+  console.log('Current page:', currentPage);
+  console.log('currentCategoryId:', currentCategoryId);
+  if (loadedItemsCount >= totalItems) {
+    hideLoadMoreBtn();
+  } else {
+    showLoadMoreBtn();
+  }
+}
