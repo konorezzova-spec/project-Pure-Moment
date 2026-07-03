@@ -1,58 +1,51 @@
 <section class="contacts section" id="contacts">
   <div class="container">
-    <div class="container contacts_left-side">
-        Left side
+    <div class="contacts_left-side">
       <div class="contacts_section-title">
-        <div class="contacts-decor">
-          <svg class="icon-contacts-decor" width="299.5" height="20.2">
-            <use href="../img/icons.svg#Group"></use>
-          </svg>
-        </div>
         <h2 class="contacts-title"> Let's Tell Your Story </h2>
         <h3 class="contacts-text">
           I can't wait to hear more about your wedding!
           Tell me about your plans, and I'll be in touch to discuss how we can
           create magic together.</h3>
       </div> 
-      <address class="contacts-addr">
+      <address class="contacts-address">
         <ul class="contacts-list">
           <li class="contacts-item">
             <a href="mailto:hello@relume.io" class="contacts-link">
               <svg class="icon-contacts-link" width="24" height="24">
-                <use href="../img/icons.svg#letter"></use>
+                <use href="./img/icons.svg#letter"></use>
               </svg>
-              hello@relume.io
+              <span>hello@relume.io</span>
             </a> 
           </li>
           <li class="contacts-item">
             <a href="tel:+1(555)000-0000" class="contacts-link">
               <svg class="icon-contacts-link" width="24" height="24">
-                <use href="../img/icons.svg#phone"></use>
+                <use href="./img/icons.svg#phone"></use>
               </svg>
-              +1 (555) 000-0000
+              <span>+40 (555) 123-4567</span>
             </a>
           </li>
 
           <li class="contacts-item">
             <a href="" class="contacts-link">
-              <svg class="icon-contacts-link" width="24" height="24">
-                <use href="../img/icons.svg#location"></use>
-              </svg>
-              123 Sample St, Sydney NSW 2000 AU
+                <svg class="icon-contacts-link" width="24" height="24">
+                  <use href="./img/icons.svg#location"></use>
+                </svg>             
+              <span>Raschdorffstraße 2-26, 13409 Berlin, Germany</span>
             </a>  
           </li>
         </ul>
       </address>  
-    </div>//left
+    </div>
 
-    <div class="container contacts_right-side">
-        Right side
+    <div class="contacts_right-side">
       <form class="contacts-form" name="contactForm">
         <div class="contacts-filds">
           <div class="contacts-fild">
             <label for="name" class="contacts-label">Name*</label>
             <input class="contacts-input-name" type="text" id="name" name="contacts_name" placeholder="Maria"
-              pattern="(^[a-zA-Z\s\.]{5,64}$)" required />
+              pattern="(^[a-zA-Z\s\.]{3,64}$)" required />
             <p class="text-invalid-name">Error Text</p>
           </div>
           <div class="contacts-fild">
@@ -61,9 +54,9 @@
               pattern="(^[a-zA-Z0-9._%+-])" required />
             <p class="text-invalid-phone">Error Text</p>
           </div>
-          <div class="contacts-textarea">
+          <div class="contacts-textarea contacts-fild">
             <label class="feedback-label" for="message">Message</label>
-            <textarea class="contacts-message" name="message" id="message" rows="10" minlength="2" maxlength="500"
+            <textarea class="contacts-message" name="message" id="message" rows="10" minlength="3" maxlength="500"
               placeholder="Tell me a little about you and your special day. Don't forget to include your wedding date, venue,   and what you're most excited about..."></textarea>
             <p class="text-invalid-textarea">Error Text</p>
           </div>
