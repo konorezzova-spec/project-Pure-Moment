@@ -4,12 +4,90 @@
     padding-bottom: 64px;
 }
 
-.contacts_section-title {
-    margin: 0 auto;
-    text-align: center;
+.contacts_left-side{
+    margin-bottom: 24px;
 }
 
-.contacts-address {
+.contacts-title {
+    margin:      0 auto;
+    text-align:  center;
+    font-weight: 500;
+    font-size:   32px;
+    line-height: 120%;
+    letter-spacing:-0.01em;
+    color: #000;
+    margin-bottom: 24px;
+}
+
+.contacts-text {
     margin: 0 auto;
     text-align: center;
+    /* font-weight: 400; */
+    font-size: 18px;
+    line-height: 150%;
+    color: #000;
+    margin-bottom: 32px;
 }
+
+/* address */
+.contacts-address {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.contacts-list{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contacts-item{
+    line-height: 150%;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #000;
+}
+
+.contacts-link {
+    display: flex;
+    align-items: left;
+    gap: 16px;  
+}
+
+.icon-contacts-link {
+    flex-shrink: 0;
+    /* не сжимаеться */
+    fill: #000;
+    stroke-width: 1px;
+    stroke: #000;
+}
+
+/* form */
+
+.contacts-filds {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100%;
+}
+
+.contacts-fild {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+}
+
+.contacts-input-name,
+.contacts-input-phone
+ {
+    padding: 8px 12px;
+}
+
+.contacts-message{
+    padding: 12px;
+}
+
+ 
