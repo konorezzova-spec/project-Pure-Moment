@@ -62,7 +62,7 @@
 }
 @media only screen and (min-width: 768px) {
   .hero-context {
-    width: 480px;
+    width: 640px;
   }
 }
 @media only screen and (min-width: 1440px) {
