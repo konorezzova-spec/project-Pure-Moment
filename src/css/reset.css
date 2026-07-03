@@ -30,3 +30,7 @@ img {
   height: auto;
   object-fit: cover;
 }
+
+input {
+  border: none;
+}

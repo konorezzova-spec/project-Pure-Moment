@@ -80,14 +80,120 @@
     width: 100%;
 }
 
+.contacts-label {
+    line-height: 1.5;
+    color: #000;
+}
+
 .contacts-input-name,
 .contacts-input-phone
  {
     padding: 8px 12px;
+    border: 2px solid #000;
+    border-radius: 6px;
+    padding-block: 8px;
+    padding-inline: 12px;
+    width: 100%;
+    height: 40px;
+    background: rgba(255, 255, 255, 0);
 }
+
+.contacts-input-name::placeholder {
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.contacts-input-phone::placeholder {
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.contacts-input-name:hover::placeholder,
+.contacts-input-name:focus::placeholder {
+    color: #000;
+}
+
+.contacts-input-phone:hover::placeholder,
+.contacts-input-phone:focus::placeholder {
+    color: #000;
+}
+
+.contacts-input-name:active,
+.contacts-input-phone:active
+ {
+    border: 2px solid #b09a0c;
+    outline: none;
+}
+
+.contacts-input-name:active::placeholder,
+.contacts-input-phone:active::placeholder {
+    color: transparent;
+}
+
+
+/* .contacts-textarea{
+    width: 100%;
+    border: 2px solid #b09a0c;
+} */
 
 .contacts-message{
+    border: 2px solid #000;
+    border-radius: 6px;
     padding: 12px;
+    resize: none;
+    width: 100%;
+    height: 180px;
+    background: rgba(255, 255, 255, 0);
 }
 
- 
+.contacts-message::placeholder {
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.contacts-message:hover::placeholder,
+.contacts-message:focus::placeholder {
+    line-height: 1.5;
+    color: #000;
+}
+
+.contacts-message:active{
+    border: 2px solid #b09a0c;
+    outline: none;
+}
+
+.contacts-message:active::placeholder {
+    color: transparent; 
+}
+/* btn */
+
+.contacts-form-btn{
+    font-weight: 500;
+    line-height: 1.5;
+    border: 1px solid #dcc110;
+    border-radius: 6px;
+    padding-block: 10px;
+    padding-inline: 24px;
+    width: 100%;
+    height: 44px;
+    background: #dcc110;
+    outline: none;
+}
+
+.btn.contacts-form-btn:hover,
+.btn.contacts-form-btn:focus {
+    background: #fff;
+}
+
+.btn.contacts-form-btn:active{
+    box-shadow: inset 0 2px 4px -2px rgba(0, 0, 0, 0.06), inset 0 4px 8px -2px rgba(0, 0, 0, 0.1);
+    background: #e6d357;
+}
+
+ .text-invalid-name,
+ .text-invalid-phone,
+ .text-invalid-textarea {
+    display: none;
+    line-height: 1.5;
+    color: #a00000;
+ }
