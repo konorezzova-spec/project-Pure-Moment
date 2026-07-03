@@ -73,6 +73,7 @@
 }
 
 .contacts-fild {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -88,6 +89,7 @@
 .contacts-input-name,
 .contacts-input-phone
  {
+    position:relative;
     padding: 8px 12px;
     border: 2px solid #000;
     border-radius: 6px;
@@ -130,11 +132,23 @@
     color: transparent;
 }
 
+.contacts-input-name:not(:placeholder-shown):invalid {
+    border-color: red;
+    outline: none;
+}
 
-/* .contacts-textarea{
-    width: 100%;
-    border: 2px solid #b09a0c;
-} */
+.contacts-input-name:not(:placeholder-shown):invalid~.text-invalid-name {
+    display: block;
+}
+
+.contacts-input-phone:not(:placeholder-shown):invalid {
+    border-color: red;
+    outline: none;
+}
+
+.contacts-input-phone:not(:placeholder-shown):invalid~.text-invalid-phone {
+    display: block;
+}
 
 .contacts-message{
     border: 2px solid #000;
@@ -165,6 +179,17 @@
 .contacts-message:active::placeholder {
     color: transparent; 
 }
+
+.contacts-message:not(:placeholder-shown):invalid {
+    border: 1px solid red;
+    outline: none;
+}
+
+.contacts-message:not(:placeholder-shown):invalid~.text-invalid-textarea {
+    display: block;
+}
+
+
 /* btn */
 
 .contacts-form-btn{
@@ -190,10 +215,18 @@
     background: #e6d357;
 }
 
+
  .text-invalid-name,
  .text-invalid-phone,
  .text-invalid-textarea {
-    display: none;
+    position: absolute;
+    top: 100%;
+    /* сразу под инпутом */
+    left: 0;
+    /* по левому краю */
     line-height: 1.5;
     color: #a00000;
+    outline: none;
+    display: none;
+    
  }
