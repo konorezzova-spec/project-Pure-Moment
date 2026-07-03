@@ -110,25 +110,22 @@
     color: rgba(0, 0, 0, 0.6);
 }
 
-.contacts-input-name:hover::placeholder,
-.contacts-input-name:focus::placeholder {
+.contacts-input-name:hover::placeholder{
     color: #000;
 }
 
-.contacts-input-phone:hover::placeholder,
-.contacts-input-phone:focus::placeholder {
+.contacts-input-phone:hover::placeholder {
     color: #000;
 }
 
-.contacts-input-name:active,
-.contacts-input-phone:active
- {
+.contacts-input-name:focus,
+.contacts-input-phone:focus{
     border: 2px solid #b09a0c;
     outline: none;
 }
 
-.contacts-input-name:active::placeholder,
-.contacts-input-phone:active::placeholder {
+.contacts-input-name:focus::placeholder,
+.contacts-input-phone:focus::placeholder {
     color: transparent;
 }
 
@@ -171,12 +168,12 @@
     color: #000;
 }
 
-.contacts-message:active{
+.contacts-message:focus{
     border: 2px solid #b09a0c;
     outline: none;
 }
 
-.contacts-message:active::placeholder {
+.contacts-message:focus::placeholder {
     color: transparent; 
 }
 
