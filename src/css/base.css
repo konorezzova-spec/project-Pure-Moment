@@ -72,11 +72,16 @@ section {
 h2 {
     font-family: var(--second-family);
     font-weight: 500;
-    font-size: 40px;
+    font-size: 28px;
     line-height: 120%;
     letter-spacing: -0.01em;
     text-align: center;
     color: var(--color-scheme-1-text);
+}
+@media only screen and (min-width: 1440px){
+    h2 {
+        font-size: 40px;
+    }
 }
 h2::before {
     content: "";
