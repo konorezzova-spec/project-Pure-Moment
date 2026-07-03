@@ -1,0 +1,27 @@
+.title {
+  font-size: 48px;
+  padding-bottom: 24px;
+}
+
+.faq-text {
+  text-align: center;
+}
+
+.faq-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 0px;
+  list-style: none;
+
+  border: 2px solid #000;
+  border-radius: 24px;
+  width: 768px;
+  height: 67px;
+
+  background-color: #faf7e6;
+}
+
+.btn-faq {
+}
