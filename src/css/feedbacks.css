@@ -3,8 +3,8 @@ p {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
-  color: rgb(0, 0, 0, 1);
-  /* color: var(--color-scheme-1-text); */
+  /* color: rgb(0, 0, 0, 1); */
+  color: var(--color-scheme-1-text);
 }
 .feedbacks-title-wrapper {
   margin-bottom: 40px;
@@ -59,12 +59,12 @@ p {
   justify-content: space-between;
   flex-direction: column;
 
-  border: 2px solid rgb(0, 0, 0, 1);
-  /* border: 2px solid var(--color-scheme-1-border); */
+  /* border: 2px solid rgb(0, 0, 0, 1); */
+  border: 2px solid var(--color-scheme-1-border);
   border-radius: 16px;
   padding: 32px;
-  background: rgb(250, 247, 230, 1);
-  /* background: var(--color-scheme-2-foreground); */
+  /* background: rgb(250, 247, 230, 1); */
+  background: var(--color-scheme-2-foreground);
 }
 
 .feedbacks-item-text {
@@ -136,14 +136,17 @@ p {
 .swiper-button-next {
   width: 48px;
   height: 48px;
-  border: 2px solid rgb(0, 0, 0, 1);
-  /* border: 2px solid var(--color-scheme-1-border); */
+  /* border: 2px solid rgb(0, 0, 0, 1); */
+  border: 2px solid var(--color-scheme-1-border);
   border-radius: 4px;
   padding: 12px;
-  background: rgb(250, 247, 230, 1);
-  /* background: var(--color-scheme-2-foreground); */
+  /* background: rgb(250, 247, 230, 1); */
+  background: var(--color-scheme-2-foreground);
 }
 .swiper {
   --swiper-navigation-size: 48px;
   --swiper-navigation-top-offset: calc(100% - 24px);
+
+  /* --swiper-pagination-color: black; */
+  --swiper-pagination-color: var(--color-scheme-1-text);
 }
