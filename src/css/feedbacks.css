@@ -146,4 +146,6 @@ p {
 .swiper {
   --swiper-navigation-size: 48px;
   --swiper-navigation-top-offset: calc(100% - 24px);
+
+  --swiper-pagination-color: var(--color-scheme-1-text);
 }
