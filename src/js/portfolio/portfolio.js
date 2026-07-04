@@ -14,8 +14,11 @@ let loadedItemsCount = 0;
 categoryButtonsContainer.addEventListener('click', handleCategoryClick);
 loadMoreButton.addEventListener('click', handleLoadMoreItems);
 
-initializePortfolio();
-loadGallery(1, 9);
+document.addEventListener("DOMContentLoaded", () => {
+  initializePortfolio();
+  loadGallery(currentPage, 9);
+  currentPage +=2;
+});
 
 async function handleCategoryClick(event) {
   event.preventDefault();
@@ -27,7 +30,7 @@ async function handleCategoryClick(event) {
 
     clearGallery();
     loadGallery(currentPage, 9, currentCategoryId);
-    
+    currentPage += 2;
   }
 };
 
@@ -42,6 +45,9 @@ async function initializePortfolio() {
 }
 
 async function loadGallery(page, limit, categoryId = '') {
+
+  showLoader();
+  
   try {
     const galleryItems = await getPortfolioGallery(page, limit, categoryId);
     
@@ -54,6 +60,8 @@ async function loadGallery(page, limit, categoryId = '') {
   } catch (error) {
     console.error("Error loading gallery:", error);
   }
+
+  hideLoader();
 }
 
 function handleLoadMoreItems() {
@@ -62,8 +70,6 @@ function handleLoadMoreItems() {
 }
 
 function checkLoadedItemsCount(totalItems, loadedItemsCount) {
-  // const totalItems = parseInt(portfolioGallery.dataset.totalItems, 10);
-  // loadedItemsCount = portfolioGallery.children.length;
   console.log('Total items:', totalItems);
   console.log('Loaded items count:', loadedItemsCount);
   console.log('Current page:', currentPage);
