@@ -77,7 +77,8 @@ async function loadGallery(page, limit, categoryId = '') {
   hideLoader();
 }
 
-function handleLoadMoreItems() {
+function handleLoadMoreItems(event) {
+  event.preventDefault();
   currentPage += 1;
   loadGallery(currentPage, 3, currentCategoryId);
 }
