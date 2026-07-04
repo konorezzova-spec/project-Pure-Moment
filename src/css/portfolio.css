@@ -79,9 +79,13 @@
   transition: background 350ms ease-in-out;
 }
 
-.portfolio-load-more:hover,
-.portfolio-load-more:focus {
+.portfolio-load-more:hover {
   background: #fff;
+}
+
+.portfolio-load-more:focus,
+.portfolio-load-more:focus-visible {
+  background: var(--color-curious-blue);
 }
 
 .portfolio-load-more:active {
