@@ -1,11 +1,16 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .magik-btn {
   display: none;
   align-items: center;
   justify-content: center;
+  z-index: 999;
   width: 48px;
   height: 48px;
   background-color: transparent;
-  border: 2px solid #000;
+  border: 2px solid var(--color-scheme-1-border);
   border-radius: 4px;
   transform: rotate(90deg);
 
@@ -15,8 +20,9 @@
 }
 
 .magik-btn:hover {
-  background-color: #e6d357;
+  background-color: var(--color-curious-blue-light);
 }
 .magik-btn:active {
-  background-color: #faf7e6;
+  box-shadow: inset 0 2px 4px -2px rgba(0, 0, 0, 0.06), inset 0 4px 8px -2px var(--opacity-neutral-darkest-10);
+background-color: var(--color-curious-blue-lighter);
 }
