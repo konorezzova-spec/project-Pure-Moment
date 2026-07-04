@@ -89,11 +89,11 @@ function checkLoadedItemsCount(totalItems, loadedItemsCount) {
   // console.log('currentCategoryId:', currentCategoryId);
   if (loadedItemsCount >= totalItems) {
     hideLoadMoreBtn();
-    iziToast.info({
-      title: 'Info',
-      message: 'All photos loaded.',
-      position: 'topRight',
-    });
+    // iziToast.info({
+    //   title: 'Info',
+    //   message: 'All photos loaded.',
+    //   position: 'topRight',
+    // });
   } else {
     showLoadMoreBtn();
   }
