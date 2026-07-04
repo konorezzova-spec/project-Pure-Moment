@@ -4,6 +4,27 @@
     padding-bottom: 64px;
 }
 
+/* @media only screen and (min-width: 768px) {
+    .contacts> .container {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+} */
+
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1440px) {
+    .contacts>.container {
+        display: flex;
+        padding-top: 92px;
+        padding-bottom: 92px;
+        gap:24px;
+    }
+
+    .contacts_left-side {
+        width:calc(100% / 2) ;
+    }
+}
+
 .contacts_left-side{
     margin-bottom: 24px;
 }
@@ -63,6 +84,12 @@
 }
 
 /* form */
+
+@media only screen and (min-width: 1440px) {
+    .contacts_right-side {
+        width: calc(100% / 2);
+    }
+}
 
 .contacts-filds {
     display: flex;
@@ -200,6 +227,12 @@
     height: 44px;
     background: #dcc110;
     outline: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .contacts-form-btn {
+        width: 310px;
+    }
 }
 
 .btn.contacts-form-btn:hover,
