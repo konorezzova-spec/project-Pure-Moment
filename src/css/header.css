@@ -1,0 +1,138 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 1.5px;
+  padding-bottom: 1.5px;
+  padding-right: 8px;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo-icon {
+  display: block;
+}
+
+.header-nav,
+.header-btn {
+  display: none;
+}
+
+.burger-btn,
+.close-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+
+  background-color: #f8f5ec;
+
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: transform 300ms ease, opacity 300ms ease, visibility 300ms ease;
+}
+
+.mobile-menu.is-open {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-menu-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 28px;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  margin-bottom: 40px;
+}
+
+.header-nav-link,
+.mobile-nav-link {
+  color: #111;
+  text-decoration: none;
+}
+
+.mobile-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 44px;
+  border-radius: 8px;
+
+  background-color: #e0c800;
+  color: #111;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .header-container {
+    padding-right: 0;
+  }
+  .header-logo-icon {
+    height: 70px;
+  }
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-size: 16px;
+  }
+
+  .header-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 180px;
+    min-height: 44px;
+    border-radius: 8px;
+
+    background-color: #e0c800;
+    color: #111;
+    text-decoration: none;
+  }
+
+  .burger-btn {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+}

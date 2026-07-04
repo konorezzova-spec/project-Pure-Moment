@@ -1,0 +1,22 @@
+.magik-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 4px;
+  transform: rotate(90deg);
+
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.magik-btn:hover {
+  background-color: #e6d357;
+}
+.magik-btn:active {
+  background-color: #faf7e6;
+}
