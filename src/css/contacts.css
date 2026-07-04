@@ -1,9 +1,4 @@
 
-.contacts > .container {
-    padding-top: 64px;
-    padding-bottom: 64px;
-}
-
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1440px) {
     .contacts>.container {
