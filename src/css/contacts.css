@@ -4,13 +4,6 @@
     padding-bottom: 64px;
 }
 
-/* @media only screen and (min-width: 768px) {
-    .contacts> .container {
-        padding-left: 32px;
-        padding-right: 32px;
-    }
-} */
-
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1440px) {
     .contacts>.container {
@@ -125,6 +118,8 @@
     width: 100%;
     height: 40px;
     background: rgba(255, 255, 255, 0);
+
+    transition: border, color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-input-name::placeholder {
@@ -182,6 +177,8 @@
     width: 100%;
     height: 180px;
     background: rgba(255, 255, 255, 0);
+
+    transition: border, color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-message::placeholder {
@@ -227,6 +224,8 @@
     height: 44px;
     background: #dcc110;
     outline: none;
+
+    transition: background 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media only screen and (min-width: 768px) {
