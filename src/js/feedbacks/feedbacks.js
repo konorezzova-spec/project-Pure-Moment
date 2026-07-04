@@ -28,7 +28,7 @@ async function feedbacks() {
 
     renderFeedbacks(data); //render
 
-    // initSwiper();
+    initSwiper();
   } catch (error) {
     console.error(error);
   }
