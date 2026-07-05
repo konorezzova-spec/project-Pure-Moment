@@ -529,7 +529,7 @@
 </div>
     </section>    
     <section class="backdrop is-hidden" data-modal>
-        <div class="modul-a">
+    <div class="modul-a">
         <ul class="modal-inf">
 
             <li class="modal-button">
@@ -548,20 +548,35 @@
 
             <li class="modal-photo">
                 <picture>
+                    <!-- WebP -->
                     <source
-                        media="(max-width: 768px)"
-                        srcset="/project-Pure-Moment/assets/modal_image@1x-DeYIPhF8.jpg 1x, /project-Pure-Moment/assets/modal_image@1x-BH6CRqhc.webp 2x"
+                      type="image/webp"
+                      media="(min-width: 768px)"
+                      srcset="/project-Pure-Moment/assets/modal_image@2x-CYWkttdG.webp"
                     />
-
+                  
                     <source
-                        media="media=(min-width: 768px) and (max-width: 1439px)"
-                        srcset="/project-Pure-Moment/assets/modal_image@2x-CkdKL5_B.jpg 1x, /project-Pure-Moment/assets/modal_image@2x-CYWkttdG.webp 2x"
+                      type="image/webp"
+                      media="(max-width: 767px)"
+                      srcset="/project-Pure-Moment/assets/modal_image@1x-BH6CRqhc.webp"
                     />
-
+                  
+                    <!-- JPG -->
+                    <source
+                      media="(min-width: 768px)"
+                      srcset="/project-Pure-Moment/assets/modal_image@2x-CkdKL5_B.jpg"
+                    />
+                  
+                    <source
+                      media="(max-width: 767px)"
+                      srcset="/project-Pure-Moment/assets/modal_image@1x-DeYIPhF8.jpg"
+                    />
+                  
                     <img
-                        src="/project-Pure-Moment/assets/modal_image@2x-CkdKL5_B.jpg"
-                        alt="Wedding photos"
+                      src="/project-Pure-Moment/assets/modal_image@1x-DeYIPhF8.jpg"
+                      alt="Wedding photos"
                     />
+                  </picture>
             </li>
 
             <li class="modal-text">
