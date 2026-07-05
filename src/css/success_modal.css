@@ -33,7 +33,7 @@
 
 .is-hidden {
     opacity: 0;
-    visibility: hidden;
+    visibility: none;
     pointer-events: none;
 }
 
