@@ -1,1 +1,241 @@
-
+.footer {
+    padding: 48px 0;
+    background-color: #f8f4e8;
+  }
+  
+  .footer-container {
+    max-width: 375px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+  
+  .footer-inner {
+    width: 100%;
+    min-height: 842px;
+    padding: 64px 40px 56px;
+    border: 2px solid #000000;
+    border-radius: 24px;
+    background-color: #f8f4e8;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  .footer-logo-icon {
+    display: block;
+    width: 204px;
+    height: auto;
+  }
+  
+  .footer-copy {
+    margin: 20px 0 0;
+  
+    font-size: 14px;
+    line-height: 1.43;
+    font-weight: 400;
+    color: #000000;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 44px;
+  }
+  
+  .footer-nav,
+  .footer-socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-title {
+    margin: 0 0 24px;
+  
+    font-size: 18px;
+    line-height: 1.33;
+    font-weight: 500;
+    color: #000000;
+  }
+  
+  .footer-nav-list,
+  .footer-socials-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  
+  .footer-nav-link {
+    display: inline-block;
+  
+    font-size: 18px;
+    line-height: 1.33;
+    font-weight: 400;
+    color: #000000;
+    text-decoration: none;
+    transition: opacity 250ms ease;
+  }
+  
+  .footer-socials-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .footer-socials-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 14px;
+    line-height: 1.43;
+    font-weight: 400;
+    color: #000000;
+    text-decoration: none;
+  
+    transition: opacity 250ms ease;
+  }
+  
+  .footer-socials-icon {
+    display: block;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+  }
+  
+  .footer-nav-link:hover,
+  .footer-nav-link:focus,
+  .footer-socials-link:hover,
+  .footer-socials-link:focus {
+    opacity: 0.7;
+  }
+  
+  /* Tablet */
+  @media screen and (min-width: 768px) {
+    .footer {
+      padding: 48px 0;
+    }
+  
+    .footer-container {
+      max-width: 768px;
+      padding: 0 32px;
+    }
+  
+    .footer-inner {
+      min-height: 384px;
+      padding: 52px 48px;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+  
+      text-align: left;
+    }
+  
+    .footer-brand {
+      align-items: flex-start;
+      margin-bottom: 0;
+      padding-top: 6px;
+    }
+  
+    .footer-logo-icon {
+      width: 128px;
+    }
+  
+    .footer-copy {
+      margin-top: 18px;
+      font-size: 14px;
+      line-height: 1.43;
+    }
+  
+    .footer-content {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 48px;
+    }
+  
+    .footer-nav,
+    .footer-socials {
+      align-items: flex-start;
+    }
+  
+    .footer-title {
+      margin-bottom: 24px;
+  
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  
+    .footer-nav-list {
+      align-items: flex-start;
+      gap: 28px;
+    }
+  
+    .footer-nav-link {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  
+    .footer-socials-list {
+      gap: 20px;
+    }
+  
+    .footer-socials-link {
+      gap: 16px;
+  
+      font-size: 14px;
+      line-height: 1.43;
+    }
+  
+    .footer-socials-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  /* Desktop */
+  @media screen and (min-width: 1440px) {
+    .footer {
+      padding: 80px 0;
+    }
+  
+    .footer-container {
+      max-width: 1440px;
+      padding: 0 64px;
+    }
+  
+    .footer-inner {
+      min-height: 384px;
+      padding: 52px 48px;
+    }
+  
+    .footer-content {
+      gap: 126px;
+      margin-right: 88px;
+    }
+  }
