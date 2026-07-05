@@ -1,17 +1,52 @@
 <section class="about">
   <div class="container">
     <h2 class="about__title">
-      Meet Maria Kovalenko: Your Partner in Capturing Unforgettable Wedding Moments
+      Meet Maria Kovalenko: Your Partner in Capturing Unforgettable Wedding
+      Moments
     </h2>
 
     <p class="about__text">
-      With years of experience in wedding photography, Maria specializes in capturing genuine emotions and beautiful moments. Her unique approach blends artistry with a personal touch, ensuring that each couple's story is told through stunning imagery.
+      With years of experience in wedding photography, Maria specializes in
+      capturing genuine emotions and beautiful moments. Her unique approach
+      blends artistry with a personal touch, ensuring that each couple's story
+      is told through stunning imagery.
     </p>
 
-    <img
-  class="about__image"
-  src="./img/modal/modal_image@1x.jpg"
-  alt="Wedding"
-/>
+    <picture>
+      <source
+        media="(max-width: 767px)"
+        srcset="
+          ./img/about/About_me_mob1x.webp 1x,
+          ./img/about/About_me_mob@2x.webp 2x
+        "
+        type="image/webp"
+      />
+
+      <source
+        media="(max-width: 767px)"
+        srcset="
+          ./img/about/About_me_mob1x.jpg 1x,
+          ./img/about/About_me_mob@2x.jpg 2x
+        "
+      />
+
+      <source
+        srcset="
+          ./img/about/about_me@1x.webp 1x,
+          ./img/about/about_me@2x.webp 2x
+        "
+        type="image/webp"
+      />
+
+      <img
+        class="about__image"
+        src="./img/about/about_me@1x.jpg"
+        srcset="
+          ./img/about/about_me@1x.jpg 1x,
+          ./img/about/about_me@2x.jpg 2x
+        "
+        alt="Wedding"
+      />
+    </picture>
   </div>
 </section>
