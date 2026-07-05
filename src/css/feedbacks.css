@@ -1,3 +1,4 @@
+/* #region ---------- common styles  */
 p {
   font-family: 'Mulish', sans-serif;
   font-weight: 400;
@@ -6,6 +7,9 @@ p {
   /* color: rgb(0, 0, 0, 1); */
   color: var(--color-scheme-1-text);
 }
+/* #endregion */
+
+/* #region ---------- feedbacks-title   block */
 .feedbacks-title-wrapper {
   margin-bottom: 40px;
 
@@ -37,7 +41,9 @@ p {
     padding-right: 40px;
   }
 }
+/* #endregion */
 
+/* #region ---------- feedbacks-content block */
 .feedbacks-content-wrapper {
   position: relative !important;
   /* width: 335px; */
@@ -150,7 +156,10 @@ p {
   /* color: rgb(0, 0, 0, 1); */
   /* color: var(--color-scheme-1-text); */
 }
-.swiper-controls {
+/* #endregion */
+
+/* #region ---------- feedback-controls block  */
+.feedback-controls {
   /* position: absolute !important; */
   /* bottom: 0 !important; */
   width: 100%;
@@ -195,21 +204,38 @@ p {
 .feedbacks-button-prev:focus-visible,
 .feedbacks-button-next:hover,
 .feedbacks-button-next:focus-visible {
-  background: rgba(214, 240, 90, 0.5);
+  background: var(--color-curious-blue-light);
   outline: none;
 }
+.feedbacks-button-prev:active,
+.feedbacks-button-next:active {
+  box-shadow:
+    inset 0 2px 4px -2px rgba(0, 0, 0, 0.06),
+    inset 0 4px 8px -2px var(--opacity-neutral-darkest-10);
+
+  background: var(--color-curious-blue-lighter);
+  outline: none;
+}
+.feedbacks-button-prev:disabled,
+.feedbacks-button-next:disabled {
+  background: var(--color-scheme-1-foreground);
+  opacity: 0.2;
+}
+/* #endregion */
+
+/* #region ---------- swiper styles settings */
 .swiper {
+  position: relative;
+
   --swiper-navigation-size: 48px;
   /* --swiper-navigation-top-offset: calc(100% - 24px); */
   --swiper-pagination-bottom: 24px;
   /* --swiper-pagination-color: black; */
   --swiper-pagination-color: var(--color-scheme-1-text);
-
-  --swiper-navigation-top-offset: calc(100% - 24px - 2px);
   /* --swiper-navigation-sides-offset: 100px; */
-
-  position: relative;
+  --swiper-navigation-top-offset: calc(100% - 24px - 2px);
 }
+
 .swiper-button-prev {
   left: auto !important;
   right: calc(48px + 16px) !important;
@@ -220,3 +246,27 @@ p {
   right: 0 !important;
   /* bottom: calc(100% - 24px) !important; */
 }
+/* #endregion */
+
+/* #region ---------- custom pagination */
+/* .feedbacks-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.feedbacks-pagination .dot {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.feedbacks-pagination .dot.active {
+  background-color: #242527; 
+} */
+/* #endregion */
