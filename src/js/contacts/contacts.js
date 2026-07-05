@@ -9,6 +9,7 @@ const formCont = document.querySelector('.contacts-form');
 formCont.addEventListener('submit',async (e) => { 
     e.preventDefault();
 
+
     const { name, phone, message } = e.target.elements;
     
     const mformData = {
@@ -18,6 +19,7 @@ formCont.addEventListener('submit',async (e) => {
     }
 
     try {
+        //  openModal();
         const response =await axios.post(
             'https://wedding-photographer.b.goit.study/api/orders',
             mformData
