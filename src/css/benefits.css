@@ -4,6 +4,11 @@
     padding: 0;
 }
 
+.benefits-title::before {
+    margin-bottom: 16px;
+   
+}
+
 .benefits-block {
     position: relative;
     margin-bottom: 40px;
@@ -44,6 +49,7 @@
     margin: 0;
 }
 
+
 /* додаю анімацію */
 
 .benefits-title,
@@ -51,6 +57,7 @@
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
+    
 }
 
 .benefits-item {
@@ -157,6 +164,10 @@
         padding-bottom: 12px;
         
     }
+
+        .benefits-title::before {
+            margin-bottom: 16px;
+        }
 
             }
             
