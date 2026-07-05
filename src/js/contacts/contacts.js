@@ -44,6 +44,5 @@ formCont.addEventListener('submit', async (e) => {
 
 
 function showContactsLoader() { 
-    console.log(contLoad.classList);
     contLoad.classList.toggle('cnt-hidden');
 };
