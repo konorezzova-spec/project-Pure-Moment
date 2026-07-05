@@ -26,8 +26,8 @@
   }
 .portfolio-gallery-item {
   border-radius: 16px;
-  width: 100%;
-  height: 100%;
+  width: 335px;
+  height: 335px;
   overflow: hidden;
 }
 .portfolio-gallery-item a {
@@ -50,6 +50,7 @@
   }
 
   .portfolio-gallery-item {
+    height: 340px;
     width: calc((100% - 24px) / 2);
   }
 }
@@ -60,7 +61,8 @@
     margin-bottom: 48px;
   }
   .portfolio-gallery-item {
-     width: calc((100% - 2 * 24px) / 3);
+    height: 421.33px;
+    width: calc((100% - 2 * 24px) / 3);
   }
 }
 /*#region loadMore*/
