@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 
-.magik-btn {
+.magic-btn {
   display: none;
   align-items: center;
   justify-content: center;
@@ -22,13 +22,13 @@ html {
   transition: background-color 350ms ease-in-out, border 350ms ease-in-out, box-shadow 350ms ease-in-out;
 }
 
-.magik-btn:hover {
+.magic-btn:hover {
   border: 2px solid var(--color-curious-blue);
   background-color: var(--color-curious-blue-lightest);
   opacity: 1;
 }
 
-.magik-btn:active {
+.magic-btn:active {
   border: 2px solid var(--color-curious-blue);
   box-shadow: inset 0 2px 4px -2px rgba(0, 0, 0, 0.06), inset 0 4px 8px -2px var(--opacity-neutral-darkest-10);
   background-color: var(--color-curious-blue-light);
