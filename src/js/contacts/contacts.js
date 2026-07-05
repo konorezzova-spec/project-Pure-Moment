@@ -1,8 +1,10 @@
 import axios from 'axios';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
+import { openModal } from '../success_modal/success_modal.js'
 
 const formCont = document.querySelector('.contacts-form');
-
 
 formCont.addEventListener('submit',async (e) => { 
     e.preventDefault();
@@ -20,12 +22,19 @@ formCont.addEventListener('submit',async (e) => {
             'https://wedding-photographer.b.goit.study/api/orders',
             mformData
         );
+        
         console.log(response.status);
-        const orderData = response.data;
-        console.log(orderData);
-
+        if (response.status === 201) {
+            openModal();
+        }
+        
         e.target.reset();
-    } catch (error){ 
-        console.log(error.message);
+    } catch (error) { 
+        iziToast.error({
+            title: 'Error',
+            message: error.message,
+            position:'topLeft',
+            timeout: 5000,
+        });
     }
 });
