@@ -10,25 +10,24 @@
   }
   
   .footer-inner {
+    width: 100%;
     min-height: 842px;
     padding: 64px 40px 56px;
-  
-    border: 2px solid #0d0d0d;
+    border: 2px solid #000000;
     border-radius: 24px;
+    background-color: #f8f4e8;
   
     display: flex;
     flex-direction: column;
     align-items: center;
   
     text-align: center;
-    background-color: #f8f4e8;
   }
   
   .footer-brand {
     display: flex;
     flex-direction: column;
     align-items: center;
-  
     margin-bottom: 32px;
   }
   
@@ -36,8 +35,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-  
-    color: #0d0d0d;
+    color: #000000;
     text-decoration: none;
   }
   
@@ -48,13 +46,12 @@
   }
   
   .footer-copy {
-    margin-top: 20px;
-    margin-bottom: 0;
+    margin: 20px 0 0;
   
     font-size: 14px;
     line-height: 1.43;
-    letter-spacing: -0.01em;
-    color: #0d0d0d;
+    font-weight: 400;
+    color: #000000;
   }
   
   .footer-content {
@@ -72,13 +69,12 @@
   }
   
   .footer-title {
-    margin-top: 0;
-    margin-bottom: 28px;
+    margin: 0 0 24px;
   
     font-size: 18px;
     line-height: 1.33;
     font-weight: 500;
-    color: #0d0d0d;
+    color: #000000;
   }
   
   .footer-nav-list,
@@ -92,7 +88,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 28px;
+    gap: 32px;
   }
   
   .footer-nav-link {
@@ -100,15 +96,17 @@
   
     font-size: 18px;
     line-height: 1.33;
-    color: #0d0d0d;
+    font-weight: 400;
+    color: #000000;
     text-decoration: none;
   
-    transition: color 250ms ease, opacity 250ms ease;
+    transition: opacity 250ms ease;
   }
   
   .footer-socials-list {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 20px;
   }
   
@@ -119,17 +117,18 @@
   
     font-size: 14px;
     line-height: 1.43;
-    color: #0d0d0d;
+    font-weight: 400;
+    color: #000000;
     text-decoration: none;
   
-    transition: color 250ms ease, opacity 250ms ease;
+    transition: opacity 250ms ease;
   }
   
   .footer-socials-icon {
+    display: block;
     flex-shrink: 0;
     width: 24px;
     height: 24px;
-  
     fill: currentColor;
   }
   
@@ -174,6 +173,7 @@
   
     .footer-copy {
       margin-top: 18px;
+  
       font-size: 14px;
       line-height: 1.43;
     }
@@ -181,7 +181,7 @@
     .footer-content {
       flex-direction: row;
       align-items: flex-start;
-      gap: 64px;
+      gap: 48px;
     }
   
     .footer-nav,
@@ -211,6 +211,8 @@
     }
   
     .footer-socials-link {
+      gap: 16px;
+  
       font-size: 14px;
       line-height: 1.43;
     }
