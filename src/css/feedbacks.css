@@ -82,9 +82,12 @@ p {
   }
 } */
 .feedbacks-item {
+  /* transition: transform 0.3s ease; */
+  margin-right: 24.5px !important; /*swiper slide-auto-width bugfix  */
+
   /* width: 335px; */
   width: 100%;
-  height: 328px;
+
   height: 328px !important;
   display: flex !important;
   align-items: flex-start;
@@ -112,6 +115,9 @@ p {
     padding: 32px;
   }
 }
+.feedbacks-item:hover {
+  /* transform: scale3d(1.02, 0.98, 1) !important; */
+}
 .feedbacks-item-text {
   /* width: 271px; */
   width: 100%;
@@ -138,6 +144,7 @@ p {
     height: 297px;
   }
 }
+
 .feedbacks-item-author {
   /* width: 271px; */
   width: 100%;
