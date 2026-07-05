@@ -19,7 +19,7 @@
 @import url('./faq.css');
 @import url('./contacts.css');
 @import url('./footer.css');
+@import url('./success_modal.css');
 
 /* Components style */
-@import url('./success_modal.css');
 @import url('./magic_btn.css');
