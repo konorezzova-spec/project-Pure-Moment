@@ -18,27 +18,35 @@
 
             <li class="modal-photo">
                 <picture>
+                    <!-- WebP -->
                     <source
-                        media="(max-width: 768px)"
-                        srcset="
-                            /img/modal/modal_image@1x.jpg 1x,
-                            /img/modal/modal_image@1x.webp 2x
-                        "
+                      type="image/webp"
+                      media="(min-width: 768px)"
+                      srcset="/img/modal/modal_image@2x.webp"
                     />
-
+                  
                     <source
-                        media="media=(min-width: 768px) and (max-width: 1439px)"
-                        srcset="
-                            /img/modal/modal_image@2x.jpg 1x,
-                            /img/modal/modal_image@2x.webp 2x
-                        "
+                      type="image/webp"
+                      media="(max-width: 767px)"
+                      srcset="/img/modal/modal_image@1x.webp"
                     />
-
+                  
+                    <!-- JPG -->
+                    <source
+                      media="(min-width: 768px)"
+                      srcset="/img/modal/modal_image@2x.jpg"
+                    />
+                  
+                    <source
+                      media="(max-width: 767px)"
+                      srcset="/img/modal/modal_image@1x.jpg"
+                    />
+                  
                     <img
-                        src="/img/modal/modal_image@2x.jpg"
-                        alt="Wedding photos"
+                      src="/img/modal/modal_image@1x.jpg"
+                      alt="Wedding photos"
                     />
-                </picture>
+                  </picture>
             </li>
 
             <li class="modal-text">
