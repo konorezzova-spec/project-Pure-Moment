@@ -1,4 +1,5 @@
 import './js/header/header.js';
+import './js/benefits/benefits.js';
 import './js/feedbacks/feedbacks.js';
 import './js/portfolio/portfolio.js';
 import './js/faq/faq.js';
