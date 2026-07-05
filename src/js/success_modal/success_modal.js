@@ -35,3 +35,15 @@ backdrop.addEventListener('click', event => {
 });
 
 export { openModal, closeModal };
+
+if (closeBtn) {
+  closeBtn.addEventListener('click', closeModal);
+}
+
+if (backdrop) {
+  backdrop.addEventListener('click', event => {
+    if (event.target === backdrop) {
+      closeModal();
+    }
+  });
+}
