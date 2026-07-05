@@ -3,8 +3,7 @@
 import axios from 'axios';
 
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
-import { Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Keyboard, A11y } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -74,7 +73,7 @@ function renderFeedbacks(feedbacksObject) {
 
 function initSwiper() {
   new Swiper('.swiper', {
-    modules: [Navigation, Pagination],
+    modules: [Navigation, Pagination, Keyboard, A11y],
 
     slidesPerView: 1,
     spaceBetween: 24,
@@ -88,6 +87,18 @@ function initSwiper() {
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
+    },
+
+    // pagination: false,
+
+    keyboard: {
+      enabled: true,
+      onlyInViewport: false,
+      pageUpDown: true,
+    },
+
+    a11y: {
+      enabled: true,
     },
   });
 }
