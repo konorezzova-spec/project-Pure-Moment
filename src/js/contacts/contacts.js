@@ -5,13 +5,12 @@ import 'izitoast/dist/css/iziToast.min.css';
 import { openModal } from '../success_modal/success_modal.js'
 
 const formCont = document.querySelector('.contacts-form');
-const contLoad = document.querySelector('.contacts-loader');
+const contLoad = document.querySelector('.cnt-loader');
+
 
 
 formCont.addEventListener('submit', async (e) => {
     e.preventDefault();
-
-
     const { name, phone, message } = e.target.elements;
     
     const mformData = {
@@ -21,7 +20,6 @@ formCont.addEventListener('submit', async (e) => {
     }
 
     try {
-        //  openModal();  
         showContactsLoader();  
         const response = await axios.post(
             'https://wedding-photographer.b.goit.study/api/orders',
@@ -29,11 +27,10 @@ formCont.addEventListener('submit', async (e) => {
         );  
         showContactsLoader();
 
-        console.log(response.status);
         if (response.status === 201) {
             openModal();
-        }
-        
+        } 
+
         e.target.reset();
     } catch (error) { 
         iziToast.error({
@@ -47,5 +44,6 @@ formCont.addEventListener('submit', async (e) => {
 
 
 function showContactsLoader() { 
-    contLoad.classList.toggle('hidden');
+    console.log(contLoad.classList);
+    contLoad.classList.toggle('cnt-hidden');
 };
