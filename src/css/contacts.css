@@ -1,6 +1,4 @@
 
-
-
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1440px) {
     .contacts>.container {
@@ -148,6 +146,7 @@
 
 .contacts-input-name:not(:placeholder-shown):invalid {
     border-color: red;
+    color:red;
     outline: none;
 }
 
@@ -157,6 +156,7 @@
 
 .contacts-input-phone:not(:placeholder-shown):invalid {
     border-color: red;
+    color:red;
     outline: none;
 }
 
@@ -198,6 +198,7 @@
 
 .contacts-message:not(:placeholder-shown):invalid {
     border: 1px solid red;
+    color: red;
     outline: none;
 }
 

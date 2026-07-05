@@ -54,7 +54,7 @@ body.no-scroll {
   visibility: hidden;
   pointer-events: none;
 
-  transition: transform 300ms ease, opacity 300ms ease, visibility 300ms ease;
+  transition: transform 350ms ease, opacity 350ms ease, visibility 350ms ease;
 }
 
 .mobile-menu.is-open {
@@ -94,11 +94,22 @@ body.no-scroll {
   width: 100%;
   min-height: 44px;
   border: 1px solid var(--color-curious-blue);
-border-radius: 6px;
+  border-radius: 6px;
 
   background-color: var(--color-curious-blue);
   color: var(--color-scheme-1-text);
   text-decoration: none;
+
+  transition: background-color 350ms ease-in-out, border 350ms ease-in-out, box-shadow 350ms ease-in-out;
+}
+.mobile-menu-btn:hover {
+  border: 2px solid var(--color-curious-blue);
+  background-color: var(--color-curious-blue-lightest);
+}
+.mobile-menu-btn:active {
+  border: 2px solid var(--color-curious-blue);
+  box-shadow: inset 0 2px 4px -2px rgba(0, 0, 0, 0.06), inset 0 4px 8px -2px var(--opacity-neutral-darkest-10);
+  background-color: var(--color-curious-blue-light);
 }
 
 @media only screen and (min-width: 768px) {
@@ -125,9 +136,21 @@ border-radius: 6px;
     border-radius: 8px;
 
     background-color: var(--color-curious-blue);
+    border: 2px solid var(--color-curious-blue);
     color: var(--color-scheme-1-text);
     text-decoration: none;
+
+    transition: background-color 350ms ease-in-out, border 350ms ease-in-out, box-shadow 350ms ease-in-out;
   }
+.header-btn:hover {
+  border: 2px solid var(--color-curious-blue);
+  background-color: var(--color-curious-blue-lightest);
+}
+.header-btn:active {
+  border: 2px solid var(--color-curious-blue);
+  box-shadow: inset 0 2px 4px -2px rgba(0, 0, 0, 0.06), inset 0 4px 8px -2px var(--opacity-neutral-darkest-10);
+  background-color: var(--color-curious-blue-light);
+}
 
   .burger-btn {
     display: none;

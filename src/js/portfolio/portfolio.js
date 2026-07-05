@@ -77,7 +77,8 @@ async function loadGallery(page, limit, categoryId = '') {
   hideLoader();
 }
 
-function handleLoadMoreItems() {
+function handleLoadMoreItems(event) {
+  event.preventDefault();
   currentPage += 1;
   loadGallery(currentPage, 3, currentCategoryId);
 }
@@ -89,11 +90,11 @@ function checkLoadedItemsCount(totalItems, loadedItemsCount) {
   // console.log('currentCategoryId:', currentCategoryId);
   if (loadedItemsCount >= totalItems) {
     hideLoadMoreBtn();
-    iziToast.info({
-      title: 'Info',
-      message: 'All photos loaded.',
-      position: 'topRight',
-    });
+    // iziToast.info({
+    //   title: 'Info',
+    //   message: 'All photos loaded.',
+    //   position: 'topRight',
+    // });
   } else {
     showLoadMoreBtn();
   }

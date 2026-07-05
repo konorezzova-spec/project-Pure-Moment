@@ -1,8 +1,16 @@
+import SLBox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const categories = document.querySelector('.portfolio-categories');
 const gallery = document.querySelector('.portfolio-gallery');
 
 const loadMoreButton = document.querySelector('.portfolio-load-more');
 const loader = document.querySelector('.loader');
+
+const lightbox = new SLBox(".portfolio-gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
 
 export function createCategoryButtons(categoriesData) {
   const markup = categoriesData.map(category => {
@@ -12,7 +20,7 @@ export function createCategoryButtons(categoriesData) {
 }
 
 function createGalleryItems({ img, title }) {
-  return `<li class="portfolio-gallery-item"><a href="${img}"><img class="portfolio-img"src="${img}" alt="${title}"></a></li>`;
+  return `<li class="portfolio-gallery-item"><a href="${img}" data-lightbox="gallery"><img class="portfolio-img"src="${img}" alt="${title}"></a></li>`;
  }
 
 export function createGallery(itemsData) {
@@ -20,6 +28,7 @@ export function createGallery(itemsData) {
     return createGalleryItems(item);
   });
   gallery.insertAdjacentHTML('beforeend', markup.join(''));
+  lightbox.refresh();
 }
 
 export function clearGallery() {
