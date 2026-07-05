@@ -3,8 +3,6 @@
 @media only screen and (min-width: 1440px) {
     .contacts>.container {
         display: flex;
-        padding-top: 92px;
-        padding-bottom: 92px;
         gap:24px;
     }
 
@@ -31,7 +29,6 @@
 .contacts-text {
     margin: 0 auto;
     text-align: center;
-    /* font-weight: 400; */
     font-size: 18px;
     line-height: 150%;
     color: #000;
