@@ -20,7 +20,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  
     text-align: center;
   }
   
@@ -99,7 +98,6 @@
     font-weight: 400;
     color: #000000;
     text-decoration: none;
-  
     transition: opacity 250ms ease;
   }
   
@@ -114,7 +112,6 @@
     display: flex;
     align-items: center;
     gap: 16px;
-  
     font-size: 14px;
     line-height: 1.43;
     font-weight: 400;
@@ -153,7 +150,6 @@
     .footer-inner {
       min-height: 384px;
       padding: 52px 48px;
-  
       flex-direction: row;
       align-items: flex-start;
       justify-content: space-between;
@@ -173,7 +169,6 @@
   
     .footer-copy {
       margin-top: 18px;
-  
       font-size: 14px;
       line-height: 1.43;
     }
