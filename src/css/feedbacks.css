@@ -195,7 +195,7 @@ p {
 .feedbacks-button-prev:focus-visible,
 .feedbacks-button-next:hover,
 .feedbacks-button-next:focus-visible {
-  background: rgba(214, 248, 90, 0.5);
+  background: rgba(214, 240, 90, 0.5);
   outline: none;
 }
 .swiper {
