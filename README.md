@@ -2,7 +2,7 @@
 
 Цей проєкт було створено на основі шаблону
 [vanilla-app-template](https://github.com/goitacademy/vanilla-app-template) в
-рамках блоку JavaScript школи [GoIT](https://goit.global/ua/)
+рамках навчального блоку JavaScript школи [GoIT](https://goit.global/ua/)
 
 ---
 
@@ -24,4 +24,4 @@
 
 натисніть на посилання секції About та насолоджуйтеся переглядом:
 
-![Посилання](./assets/Посилання.png)
+![Посилання](./assets/посилання.png)
