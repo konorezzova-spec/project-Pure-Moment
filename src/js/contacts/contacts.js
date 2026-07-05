@@ -10,25 +10,25 @@ formCont.addEventListener('submit',async (e) => {
     e.preventDefault();
 
 
-    // const { name, phone, message } = e.target.elements;
+    const { name, phone, message } = e.target.elements;
     
-    // const mformData = {
-    //     name: name.value,
-    //     phone: phone.value,
-    //     message:message.value,
-    // }
+    const mformData = {
+        name: name.value,
+        phone: phone.value,
+        message:message.value,
+    }
 
     try {
-         openModal();
-    //     const response =await axios.post(
-    //         'https://wedding-photographer.b.goit.study/api/orders',
-    //         mformData
-    //     );
+        //  openModal();
+        const response =await axios.post(
+            'https://wedding-photographer.b.goit.study/api/orders',
+            mformData
+        );
         
-    //     console.log(response.status);
-    //     if (response.status === 201) {
-    //         openModal();
-    //     }
+        console.log(response.status);
+        if (response.status === 201) {
+            openModal();
+        }
         
         e.target.reset();
     } catch (error) { 
