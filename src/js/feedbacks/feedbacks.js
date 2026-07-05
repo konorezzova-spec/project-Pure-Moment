@@ -3,8 +3,7 @@
 import axios from 'axios';
 
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
-import { Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Keyboard, A11y } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -12,14 +11,18 @@ import 'swiper/css/pagination';
 
 // ---------- global variables init ----------
 
+let swiper;
 let feedbacksCount;
 // let feedbacks = [];
 
-// ---------- main logic start ----------
+// #region ----- main logic start ----------
 
 feedbacks(); // START main function
 
-// ----------    functions    ----------
+// #endregion
+
+// #region -----    functions    ----------
+
 //main function calls secondary functions one-by-one
 async function feedbacks() {
   //call function toget data from backend
@@ -55,7 +58,7 @@ function renderFeedbacks(feedbacksObject) {
   feedbacksCount = feedbacksObject.total;
 
   const feedbacksList = document.querySelector('.feedbacks-list');
-  console.log(feedbacksList);
+  // console.log(feedbacksList);
 
   const feedbacksItems = feedbacksObject.feedbacks
     .map(
@@ -70,14 +73,20 @@ function renderFeedbacks(feedbacksObject) {
   feedbacksList.insertAdjacentHTML('beforeend', feedbacksItems);
 }
 
-//function   initialize  swiper
-
+//function inits Swiper and sets its parameters
 function initSwiper() {
   new Swiper('.swiper', {
-    modules: [Navigation, Pagination],
+    modules: [Navigation, Pagination, Keyboard, A11y],
 
     slidesPerView: 1,
     spaceBetween: 24,
+
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      },
+    },
 
     navigation: {
       nextEl: '.swiper-button-next',
@@ -89,5 +98,18 @@ function initSwiper() {
       el: '.swiper-pagination',
       clickable: true,
     },
+    // pagination: false,
+
+    keyboard: {
+      enabled: true,
+      onlyInViewport: false,
+      pageUpDown: true,
+    },
+
+    a11y: {
+      enabled: true,
+    },
   });
 }
+
+//#endregion
