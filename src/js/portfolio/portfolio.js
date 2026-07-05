@@ -1,5 +1,5 @@
 import { getPortfolioItemsCategories, getPortfolioGallery } from './portfolio-api.js';
-import { createCategoryButtons, createGallery, clearGallery, showLoadMoreBtn, hideLoadMoreBtn, showLoader, hideLoader } from './portfolio-render.js';
+import { createCategoryButtons, createGallery, clearGallery, showLoadMoreBtn, hideLoadMoreBtn, showLoader, hideLoader, setActiveCategoryButton } from './portfolio-render.js';
 
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
@@ -31,6 +31,7 @@ async function handleCategoryClick(event) {
     currentPage = 1;
     loadedItemsCount = 0;
 
+    setActiveCategoryButton(categoryId);
     clearGallery();
     loadGallery(currentPage, 9, currentCategoryId);
     currentPage += 2;
@@ -59,6 +60,7 @@ async function loadGallery(page, limit, categoryId = '') {
   try {
     const galleryItems = await getPortfolioGallery(page, limit, categoryId);
     
+    // setActiveCategoryButton(categoryId);
     createGallery(galleryItems.weddingPhotos);
 
     loadedItemsCount += limit;

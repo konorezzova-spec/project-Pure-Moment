@@ -4,6 +4,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 const categories = document.querySelector('.portfolio-categories');
 const gallery = document.querySelector('.portfolio-gallery');
 
+const categoryButtons = document.getElementsByClassName('portfolio-category-btn');
 const loadMoreButton = document.querySelector('.portfolio-load-more');
 const loader = document.querySelector('.loader');
 
@@ -49,4 +50,16 @@ export function showLoadMoreBtn() {
 
 export function hideLoadMoreBtn() {
   loadMoreButton.classList.add('hidden');
+}
+
+export function setActiveCategoryButton(categoryId) {
+
+  for (const button of categoryButtons) {
+   
+    if (button.dataset.id === categoryId) {
+      button.classList.add('active');
+    } else {
+      button.classList.remove('active');
+    }
+  }
 }

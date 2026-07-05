@@ -11,7 +11,8 @@
   border-radius: 4px;
   background-color: transparent;
 }
-.f{
+/* .portfolio-category-btn */
+.active {
   border: 2px solid #000;
 }
 
@@ -83,14 +84,16 @@
   background: #fff;
 }
 
-.portfolio-load-more:focus,
-.portfolio-load-more:focus-visible {
-  background: var(--color-curious-blue);
+.portfolio-load-more:active {
+  box-shadow:
+    inset 0 2px 4px -2px rgba(0, 0, 0, 0.06),
+    inset 0 4px 8px -2px rgba(0, 0, 0, 0.1);
+  background: var(--color-curious-blue-light);
 }
 
-.portfolio-load-more:active {
-  box-shadow: inset 0 2px 4px -2px rgba(0, 0, 0, 0.06), inset 0 4px 8px -2px rgba(0, 0, 0, 0.1);
-  background: var(--color-curious-blue-light);
+.portfolio-load-more:focus:not(:hover),
+.portfolio-load-more:focus-visible:not(:hover) {
+  background: var(--color-curious-blue);
 }
 
 @media screen and (min-width: 768px) {
