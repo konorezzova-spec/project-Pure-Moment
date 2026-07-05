@@ -78,16 +78,21 @@
 
   .social-footer {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
     gap: 16px;
-}
+  }
 
-  .footer-follow-title {
-font-weight: 600;
-font-size: 16px;
-text-align: start;
+.footer-follow-title {
+  margin: 0;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+
+  align-self: flex-start;
 }
 
   .footer-social-list {
@@ -164,7 +169,8 @@ text-align: start;
       }
     
       .footer-follow-title {
-        text-align: start;
+        text-align: left;
+        align-self: flex-start;
       }
     
          .footer-social-list {
