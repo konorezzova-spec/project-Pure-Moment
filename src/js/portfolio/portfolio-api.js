@@ -17,5 +17,5 @@ export async function getPortfolioGallery(page = 1, limit = 3, categoryId='') {
   }
   const URL = `https://wedding-photographer.b.goit.study/api/wedding-photos/`;
   
-  return await (await axios.get(URL, {params: serchParams})).data;
+  return (await axios.get(URL, {params: serchParams})).data;
 }
