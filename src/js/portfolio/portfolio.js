@@ -44,7 +44,7 @@ async function initializePortfolio() {
   
     createCategoryButtons(categories);
   } catch (error) {
-    // console.error("Error initializing portfolio:", error);
+    
      iziToast.error({
       title: 'Error',
       message: 'Error initializing portfolio:',
@@ -60,7 +60,6 @@ async function loadGallery(page, limit, categoryId = '') {
   try {
     const galleryItems = await getPortfolioGallery(page, limit, categoryId);
     
-    // setActiveCategoryButton(categoryId);
     createGallery(galleryItems.weddingPhotos);
 
     loadedItemsCount += limit;
@@ -68,7 +67,7 @@ async function loadGallery(page, limit, categoryId = '') {
     checkLoadedItemsCount(galleryItems.totalItems, loadedItemsCount);
 
   } catch (error) {
-    // console.error("Error loading gallery:", error);
+  
     iziToast.error({
       title: 'Error',
       message: 'Something went wrong. Please try again later.',
@@ -86,17 +85,9 @@ function handleLoadMoreItems(event) {
 }
 
 function checkLoadedItemsCount(totalItems, loadedItemsCount) {
-  // console.log('Total items:', totalItems);
-  // console.log('Loaded items count:', loadedItemsCount);
-  // console.log('Current page:', currentPage);
-  // console.log('currentCategoryId:', currentCategoryId);
-  if (loadedItemsCount >= totalItems) {
+    if (loadedItemsCount >= totalItems) {
     hideLoadMoreBtn();
-    // iziToast.info({
-    //   title: 'Info',
-    //   message: 'All photos loaded.',
-    //   position: 'topRight',
-    // });
+   
   } else {
     showLoadMoreBtn();
   }
