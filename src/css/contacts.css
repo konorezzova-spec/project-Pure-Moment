@@ -1,5 +1,5 @@
 
-/* Styles for Desktop devices */
+
 @media only screen and (min-width: 1440px) {
     .contacts>.container {
         display: flex;
@@ -69,7 +69,6 @@
 }
 
 /* form */
-
 @media only screen and (min-width: 1440px) {
     .contacts_right-side {
         width: calc(100% / 2);
@@ -207,7 +206,6 @@
 
 
 /* btn */
-
 .contacts-form-btn{
     font-weight: 500;
     line-height: 1.5;
@@ -255,9 +253,6 @@
     
  }
 
- /*#endregion loadMore*/
-
- /*#region loader*/
 
  .cnt-loader {
      --color-1: var(--color-curious-blue);
@@ -306,7 +301,7 @@
      }
  }
 
- /*#endregion loader*/
+ 
  .cnt-hidden {
      display: none;
  }
