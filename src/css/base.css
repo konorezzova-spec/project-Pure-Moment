@@ -11,7 +11,7 @@
 
   font-family: var(--font-family);
   font-size: 18px;
-  line-height: 1.5;
+  line-height: 150%;
   font-weight: 400;
   color: var(--color-scheme-1-text);
   background-color: var(--color-curious-blue-lightest);
