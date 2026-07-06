@@ -1,21 +1,25 @@
 import axios from "axios";
 
+const BASE_URL = "https://wedding-photographer.b.goit.study/api";
+
 export async function getPortfolioItemsCategories() {
  
-  const URL = "https://wedding-photographer.b.goit.study/api/categories";
-  return (await axios.get(URL)).data;
+  const response = await axios.get(`${BASE_URL}/categories`);
+  
+  return response.data;
 };
 
 export async function getPortfolioGallery(page = 1, limit = 3, categoryId='') {
-  const serchParams = new URLSearchParams({
-    page: page,
-    limit: limit,
-  });
+
+  const params = {
+    page,
+    limit,
+  };
 
   if (categoryId) {
-    serchParams.append('categoryId', categoryId);
+    params.categoryId = categoryId;
   }
-  const URL = `https://wedding-photographer.b.goit.study/api/wedding-photos/`;
+  const response = await axios.get(`${BASE_URL}/wedding-photos`, { params });
   
-  return (await axios.get(URL, {params: serchParams})).data;
+  return response.data;
 }

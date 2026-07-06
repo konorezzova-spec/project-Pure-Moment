@@ -21,7 +21,7 @@ export function createCategoryButtons(categoriesData) {
 }
 
 function createGalleryItems({ img, title }) {
-  return `<li class="portfolio-gallery-item"><a href="${img}" data-lightbox="gallery"><img class="portfolio-img"src="${img}" alt="${title}"></a></li>`;
+  return `<li class="portfolio-gallery-item"><a href="${img}" data-lightbox="gallery" loading="lazy" decoding="async"><img class="portfolio-img"src="${img}" alt="${title}"></a></li>`;
  }
 
 export function createGallery(itemsData) {
