@@ -26,8 +26,8 @@
   }
 .portfolio-gallery-item {
   border-radius: 16px;
-  width: 335px;
-  height: 335px;
+  max-width: 335px;
+  max-height: 335px;
   overflow: hidden;
 }
 .portfolio-gallery-item a {
