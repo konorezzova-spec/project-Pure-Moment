@@ -19,32 +19,29 @@
             <li class="modal-photo">
                 <picture>
                     <!-- WebP -->
-                    <source
-                      type="image/webp"
-                      media="(min-width: 768px)"
-                      srcset="/img/modal/modal_image@2x.webp"
-                    />
-                  
-                    <source
-                      type="image/webp"
+
+                      <source
                       media="(max-width: 767px)"
-                      srcset="/img/modal/modal_image@1x.webp"
-                    />
-                  
+                      srcset="/img/modal/modal_image@1x.webp 1x,
+                              /img/modal/modal_image@2x.webp 2x"
+                      type="image/webp"
+                      />
+
                     <!-- JPG -->
-                    <source
-                      media="(min-width: 768px)"
-                      srcset="/img/modal/modal_image@2x.jpg"
-                    />
-                  
-                    <source
+
+                      <source
                       media="(max-width: 767px)"
-                      srcset="/img/modal/modal_image@1x.jpg"
+                      srcset="/img/modal/modal_image@1x.jpg 1x,
+                              /img/modal/modal_image@2x.jpg 2x"
                     />
-                  
+
                     <img
                       src="/img/modal/modal_image@1x.jpg"
+
                       alt="Wedding photos"
+                      width="295"
+                      height="207"
+                      loading="lazy"
                     />
                   </picture>
             </li>
