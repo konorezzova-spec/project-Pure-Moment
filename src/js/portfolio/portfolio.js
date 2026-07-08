@@ -1,5 +1,5 @@
 import { getPortfolioItemsCategories, getPortfolioGallery } from './portfolio-api.js';
-import { createCategoryButtons, createGallery, clearGallery, showLoadMoreBtn, hideLoadMoreBtn, showLoader, hideLoader, setActiveCategoryButton } from './portfolio-render.js';
+import { createCategoryButtons, createGallery, clearGallery, showLoadMoreBtn, hideLoadMoreBtn, showLoader, hideLoader, setActiveCategoryButton, lightboxLikeButton } from './portfolio-render.js';
 
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
@@ -13,14 +13,15 @@ const categories = document.querySelector('.portfolio-categories');
 let currentCategoryId = '';
 let currentPage = 1;
 let loadedItemsCount = 0;
+const itemsPerPage = 9;
+const loadMoreItemsPerPage = 3;
 
 categoryButtonsContainer.addEventListener('click', handleCategoryClick);
 loadMoreButton.addEventListener('click', handleLoadMoreItems);
 
 document.addEventListener("DOMContentLoaded", () => {
   initializePortfolio();
-  loadGallery(currentPage, 9);
-  currentPage +=2;
+  loadGallery(currentPage, itemsPerPage);
 });
 
 async function handleCategoryClick(event) {
@@ -33,8 +34,8 @@ async function handleCategoryClick(event) {
 
     setActiveCategoryButton(categoryId);
     clearGallery();
-    loadGallery(currentPage, 9, currentCategoryId);
-    currentPage += 2;
+    lightboxLikeButton(); // Reset the initialized flag when changing categories
+    loadGallery(currentPage, itemsPerPage, currentCategoryId);
   }
 };
 
@@ -80,8 +81,9 @@ async function loadGallery(page, limit, categoryId = '') {
 
 function handleLoadMoreItems(event) {
   event.preventDefault();
-  currentPage += 1;
-  loadGallery(currentPage, 3, currentCategoryId);
+  currentPage = Math.floor(loadedItemsCount / loadMoreItemsPerPage) + 1;
+  lightboxLikeButton();
+  loadGallery(currentPage, loadMoreItemsPerPage, currentCategoryId);
 }
 
 function checkLoadedItemsCount(totalItems, loadedItemsCount) {
