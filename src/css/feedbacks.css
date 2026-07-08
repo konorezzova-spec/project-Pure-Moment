@@ -67,7 +67,7 @@ p {
   }
 }
 /* .feedbacks-list {
-  width: 335px; 
+  width: 335px;
   width: 100%;
   height: 328px;
 } */
@@ -115,9 +115,9 @@ p {
     padding: 32px;
   }
 }
-.feedbacks-item:hover {
+/* .feedbacks-item:hover { */
   /* transform: scale3d(1.02, 0.98, 1) !important; */
-}
+/* } */
 .feedbacks-item-text {
   /* width: 271px; */
   width: 100%;
@@ -274,6 +274,6 @@ p {
 }
 
 .feedbacks-pagination .dot.active {
-  background-color: #242527; 
+  background-color: #242527;
 } */
 /* #endregion */
