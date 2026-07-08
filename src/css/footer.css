@@ -34,7 +34,7 @@
   align-items: center;
   justify-content: center;
 
-  transition: transform 250ms ease;
+  transition: transform 350ms ease;
 }
 
 .footer-logo:hover,
