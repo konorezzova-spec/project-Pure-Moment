@@ -7,7 +7,7 @@
           I can't wait to hear more about your wedding!
           Tell me about your plans, and I'll be in touch to discuss how we can
           create magic together.</p>
-      </div> 
+      </div>
       <address class="contacts-address">
         <ul class="contacts-list">
           <li class="contacts-item">
@@ -16,7 +16,7 @@
                 <use href="./img/icons.svg#letter"></use>
               </svg>
               <span>hello@relume.io</span>
-            </a> 
+            </a>
           </li>
           <li class="contacts-item">
             <a href="tel:+1(555)000-0000" class="contacts-link">
@@ -31,32 +31,51 @@
             <a href="" class="contacts-link">
                 <svg class="icon-contacts-link" width="24" height="24">
                   <use href="./img/icons.svg#location"></use>
-                </svg>             
+                </svg>
               <span>Raschdorffstraße 2-26, 13409 Berlin, Germany</span>
-            </a>  
+            </a>
           </li>
         </ul>
-      </address>  
+      </address>
     </div>
 
     <div class="contacts_right-side">
       <form class="contacts-form" name="contactForm">
         <div class="contacts-filds">
           <div class="contacts-fild">
-            <label for="name" class="contacts-label">Name*</label>
-            <input class="contacts-input-name" type="text" id="name" name="contacts_name" placeholder="Ann & Ian"
-              pattern="(^[a-zA-Z\s\.]{2,64}$)" required />
+            <label for="name"
+              class="contacts-label">Name*</label>
+            <input class="contacts-input-name"
+              type="text"
+              id="name"
+              name="contacts_name"
+              placeholder="Ann & Ian"
+              pattern="(^[a-zA-Z\s\.]{2,64}$)"
+              autocomplete="on"
+              required />
             <p class="text-invalid-name">Error Text</p>
           </div>
           <div class="contacts-fild">
-            <label for="phone" class="contacts-label">Phone*</label>
-            <input class="contacts-input-phone" type="tel" id="phone" name="contacts_phone" placeholder="380961234568"
-              pattern="(^[0-9]{12}$)" required />
+            <label for="phone"
+              class="contacts-label">Phone*</label>
+            <input class="contacts-input-phone"
+              type="tel"
+              id="phone"
+              name="contacts_phone"
+              placeholder="380961234568"
+              pattern="(^[0-9]{12}$)"
+              autocomplete="on"
+              required />
             <p class="text-invalid-phone">Error Text</p>
           </div>
           <div class="contacts-textarea contacts-fild">
             <label class="feedback-label" for="message">Message</label>
-            <textarea class="contacts-message" name="message" id="message" rows="10" minlength="3" maxlength="500"
+            <textarea class="contacts-message"
+              name="message"
+              id="message"
+              rows="10"
+              minlength="3"
+              maxlength="500"
               placeholder="Tell me a little about you and your special day. Don't forget to include your wedding date, venue,   and what you're most excited about..."></textarea>
             <p class="text-invalid-textarea">Error Text</p>
           </div>
@@ -64,7 +83,7 @@
           <div class="cnt-loader cnt-hidden"></div>
         </div>
       </form>
-    </div>  
+    </div>
   </div>
 
 </section>
