@@ -1,4 +1,4 @@
-(() => {
+document.addEventListener('DOMContentLoaded', () => {
   const animatedElements = document.querySelectorAll(
     '.benefits-title, .benefits-item'
   );
@@ -16,4 +16,4 @@
   );
 
   animatedElements.forEach(el => observer.observe(el));
-})();
+});
