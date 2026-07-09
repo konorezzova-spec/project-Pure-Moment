@@ -17,16 +17,34 @@ let likeButton = null;
 const STORAGE_KEY = 'wishList';
 const likes = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 let initialized = false;
-
+const likedSvg = `
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="32"
+             height="32"
+             viewBox="0 0 24 24"
+             fill="currentColor"
+             stroke="var(--color-curious-blue)"
+             stroke-width="1.5">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                   2 5.42 4.42 3 7.5 3
+                   c1.74 0 3.41.81 4.5 2.09
+                   C13.09 3.81 14.76 3 16.5 3
+                   19.58 3 22 5.42 22 8.5
+                   c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      `;
 export function createCategoryButtons(categoriesData) {
   const markup = categoriesData.map(category => {
-    return `<li><button class="portfolio-category-btn" data-id="${category._id}" aria-label="${category.category}">${category.category}</button></li>`;
+    return `<li><button class="portfolio-category-btn" data-id="${category._id}">${category.category}</button></li>`;
   });
   categories.insertAdjacentHTML('beforeend', markup.join(''));
 }
 
 function createGalleryItems({ img, title }) {
-  return `<li class="portfolio-gallery-item"><a href="${img}" data-lightbox="gallery"><img class="portfolio-img"src="${img}" alt="${title}" loading="lazy" decoding="async"></a>
+   const liked = likes.includes(img);
+  return `<li class="portfolio-gallery-item"><button class="portfolio-heart-btn ${liked ? 'liked' : ''}" 
+        type="button" data-img="${img}" aria-label="${liked ? 'liked' : 'unlike'}">${likedSvg}</button>
+  <a href="${img}" data-lightbox="gallery"><img class="portfolio-img"src="${img}" alt="${title}" loading="lazy" decoding="async"></a>
   </li>`;
  }
 
@@ -40,8 +58,10 @@ export function createGallery(itemsData) {
  
   if (!initialized) {
     initLightboxLikeButton();
+    gallery.addEventListener('click', handleGalleryLikeButtonClick);
     initialized = true;
   }
+ 
 }
 
 export function clearGallery() {
@@ -120,22 +140,7 @@ function initLightboxLikeButton() {
       likeButton = document.createElement('button');
       likeButton.className = 'sl-portfolio-heart-btn';
 
-      likeButton.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg"
-             width="32"
-             height="32"
-             viewBox="0 0 24 24"
-             fill="currentColor"
-             stroke="var(--color-curious-blue)"
-             stroke-width="1.5">
-          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
-                   2 5.42 4.42 3 7.5 3
-                   c1.74 0 3.41.81 4.5 2.09
-                   C13.09 3.81 14.76 3 16.5 3
-                   19.58 3 22 5.42 22 8.5
-                   c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
-      `;
+      likeButton.innerHTML = likedSvg;
 
       likeButton.addEventListener('click', () => {
         const img = getCurrentImage();
@@ -144,6 +149,7 @@ function initLightboxLikeButton() {
 
         toggleLike(img.src);
         updateLikeButton();
+        updateGalleryLikeButn(img.src)
       });
     }
 
@@ -159,4 +165,28 @@ function initLightboxLikeButton() {
 
 export function lightboxLikeButton() {
   initialized = false; // Reset the initialized flag when loading more items
+}
+
+function handleGalleryLikeButtonClick(evt) {
+  const btn = evt.target.closest('.portfolio-heart-btn');
+
+  if (!btn) return;
+  evt.preventDefault();
+  evt.stopPropagation();
+
+  const { img } = btn.dataset;
+ 
+  toggleLike(img);
+  btn.classList.toggle('liked', isLiked(img));
+
+  updateLikeButton();
+  updateGalleryLikeButn(img);
+}
+
+function updateGalleryLikeButn(src) {
+  const btn = gallery.querySelector(`.portfolio-heart-btn[data-img="${CSS.escape(src)}"]`);
+
+  if (!btn) return;
+
+  btn.classList.toggle('liked', isLiked(src));
 }
