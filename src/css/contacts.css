@@ -54,7 +54,7 @@
 
 .contacts-link {
   display: flex;
-  align-items: left;
+  justify-content: flex-start;
   gap: 16px;
 }
 

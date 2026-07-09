@@ -16,7 +16,7 @@ body.no-scroll {
   display: flex;
   align-items: center;
 
-  transition: transform 350mc ease;
+  transition: transform 350ms ease;
 }
 
 .header-logo:hover,
