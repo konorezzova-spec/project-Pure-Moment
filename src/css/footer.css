@@ -133,6 +133,11 @@
   opacity: 0.7;
 }
 
+.footer-icon {
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
 /* Tablet */
 @media screen and (min-width: 768px) {
   .footer-container {
