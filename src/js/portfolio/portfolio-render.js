@@ -13,6 +13,26 @@ const lightbox = new SLBox(".portfolio-gallery a", {
   captionDelay: 250,
 });
 
+let likeButton = null;
+const STORAGE_KEY = 'wishList';
+const likes = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+let initialized = false;
+const likedSvg = `
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="32"
+             height="32"
+             viewBox="0 0 24 24"
+             fill="currentColor"
+             stroke="var(--color-curious-blue)"
+             stroke-width="1.5">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                   2 5.42 4.42 3 7.5 3
+                   c1.74 0 3.41.81 4.5 2.09
+                   C13.09 3.81 14.76 3 16.5 3
+                   19.58 3 22 5.42 22 8.5
+                   c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      `;
 export function createCategoryButtons(categoriesData) {
   const markup = categoriesData.map(category => {
     return `<li><button class="portfolio-category-btn" data-id="${category._id}">${category.category}</button></li>`;
@@ -21,7 +41,11 @@ export function createCategoryButtons(categoriesData) {
 }
 
 function createGalleryItems({ img, title }) {
-  return `<li class="portfolio-gallery-item"><a href="${img}" data-lightbox="gallery"><img class="portfolio-img"src="${img}" alt="${title}" loading="lazy" decoding="async"></a></li>`;
+   const liked = likes.includes(img);
+  return `<li class="portfolio-gallery-item"><button class="portfolio-heart-btn ${liked ? 'liked' : ''}" 
+        type="button" data-img="${img}" aria-label="${liked ? 'liked' : 'unlike'}">${likedSvg}</button>
+  <a href="${img}" data-lightbox="gallery"><img class="portfolio-img"src="${img}" alt="${title}" loading="lazy" decoding="async"></a>
+  </li>`;
  }
 
 export function createGallery(itemsData) {
@@ -29,7 +53,15 @@ export function createGallery(itemsData) {
     return createGalleryItems(item);
   });
   gallery.insertAdjacentHTML('beforeend', markup.join(''));
+  
   lightbox.refresh();
+ 
+  if (!initialized) {
+    initLightboxLikeButton();
+    gallery.addEventListener('click', handleGalleryLikeButtonClick);
+    initialized = true;
+  }
+ 
 }
 
 export function clearGallery() {
@@ -62,4 +94,99 @@ export function setActiveCategoryButton(categoryId) {
       button.classList.remove('active');
     }
   }
+}
+
+//////
+function getCurrentImage() {
+  return document.querySelector('.sl-image img');
+}
+
+function isLiked(src) {
+  return likes.includes(src);
+}
+
+function saveLikes() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(likes));
+}
+
+function toggleLike(src) {
+  const index = likes.indexOf(src);
+
+  if (index === -1) {
+    likes.push(src);
+  } else {
+    likes.splice(index, 1);
+  }
+
+  saveLikes();
+}
+
+function updateLikeButton() {
+  if (!likeButton) return;
+
+  const img = getCurrentImage();
+
+  if (!img) return;
+
+  likeButton.classList.toggle('liked', isLiked(img.src));
+}
+
+function initLightboxLikeButton() {
+
+  lightbox.on('shown.simplelightbox', () => {
+    const wrapper = document.querySelector('.sl-wrapper');
+
+    if (!likeButton) {
+      likeButton = document.createElement('button');
+      likeButton.className = 'sl-portfolio-heart-btn';
+
+      likeButton.innerHTML = likedSvg;
+
+      likeButton.addEventListener('click', () => {
+        const img = getCurrentImage();
+
+        if (!img) return;
+
+        toggleLike(img.src);
+        updateLikeButton();
+        updateGalleryLikeButn(img.src)
+      });
+    }
+
+    if (!wrapper.contains(likeButton)) {
+      wrapper.append(likeButton);
+    }
+
+    updateLikeButton();
+  });
+
+  lightbox.on('changed.simplelightbox', updateLikeButton);
+}
+
+export function lightboxLikeButton() {
+  initialized = false; // Reset the initialized flag when loading more items
+}
+
+function handleGalleryLikeButtonClick(evt) {
+  const btn = evt.target.closest('.portfolio-heart-btn');
+
+  if (!btn) return;
+  evt.preventDefault();
+  evt.stopPropagation();
+
+  const { img } = btn.dataset;
+ 
+  toggleLike(img);
+  btn.classList.toggle('liked', isLiked(img));
+
+  updateLikeButton();
+  updateGalleryLikeButn(img);
+}
+
+function updateGalleryLikeButn(src) {
+  const btn = gallery.querySelector(`.portfolio-heart-btn[data-img="${CSS.escape(src)}"]`);
+
+  if (!btn) return;
+
+  btn.classList.toggle('liked', isLiked(src));
 }

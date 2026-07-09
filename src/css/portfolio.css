@@ -25,6 +25,7 @@
   margin-bottom: 40px;
 }
 .portfolio-gallery-item {
+  position: relative;
   border-radius: 16px;
   max-width: 335px;
   height: 335px;
@@ -56,6 +57,7 @@
 
   .portfolio-gallery-item {
     height: 340px;
+    max-width: 340px;
     width: calc((100% - 24px) / 2);
   }
 }
@@ -67,6 +69,7 @@
   }
   .portfolio-gallery-item {
     height: 421.33px;
+    max-width: 421.33px;
     width: calc((100% - 2 * 24px) / 3);
   }
 }
@@ -163,3 +166,54 @@
 .hidden {
   display: none;
 }
+
+/*#region like button*/
+.sl-portfolio-heart-btn,
+.portfolio-heart-btn {
+  position: absolute;
+  top: 20px;
+
+  width: 32px;
+  height: 32px;
+
+  border: none;
+  border-radius: 50%;
+
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+ 
+  transition: 350ms ease-in-out;
+}
+
+.sl-portfolio-heart-btn{
+  background: rgba(0, 0, 0, .65);
+  right: 80px;
+  z-index: 10060;
+}
+
+.portfolio-heart-btn {
+  background: transparent;
+  right: 20px;
+  z-index: 2;
+}
+
+.sl-portfolio-heart-btn:hover, .portfolio-heart-btn:hover {
+  transform: scale(1.1);
+}
+
+.sl-portfolio-heart-btn svg, .portfolio-heart-btn svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+.sl-portfolio-heart-btn svg {
+  stroke: #f1045f;
+}
+.sl-portfolio-heart-btn.liked {
+  color: #f1045f;
+}
+.portfolio-heart-btn.liked {
+  color: var(--color-curious-blue);
+}
+/*#endregion like button*/

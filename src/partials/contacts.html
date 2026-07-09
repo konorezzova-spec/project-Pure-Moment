@@ -7,19 +7,21 @@
           I can't wait to hear more about your wedding!
           Tell me about your plans, and I'll be in touch to discuss how we can
           create magic together.</p>
-      </div> 
+      </div>
       <address class="contacts-address">
         <ul class="contacts-list">
           <li class="contacts-item">
-            <a href="mailto:hello@relume.io" class="contacts-link">
+            <a href="mailto:hello@relume.io"
+              class="contacts-link">
               <svg class="icon-contacts-link" width="24" height="24">
                 <use href="./img/icons.svg#letter"></use>
               </svg>
               <span>hello@relume.io</span>
-            </a> 
+            </a>
           </li>
           <li class="contacts-item">
-            <a href="tel:+1(555)000-0000" class="contacts-link">
+            <a href="tel:+1(555)000-0000"
+              class="contacts-link">
               <svg class="icon-contacts-link" width="24" height="24">
                 <use href="./img/icons.svg#phone"></use>
               </svg>
@@ -28,35 +30,57 @@
           </li>
 
           <li class="contacts-item">
-            <a href="" class="contacts-link">
+            <a href="https://www.google.com/maps/place/Raschdorffstraße+2,+13409+Berlin-Bezirk+Reinickendorf,+Німеччина/@52.5679038,13.3602335,698m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47a853ca446de2a9:0xc962cacc3995edea!8m2!3d52.5679038!4d13.3628084!16s%2Fg%2F11q2n92wm5?entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D"
+              class="contacts-link"
+              target="_blank"
+              rel="noopener no-referrer">
                 <svg class="icon-contacts-link" width="24" height="24">
                   <use href="./img/icons.svg#location"></use>
-                </svg>             
+                </svg>
               <span>Raschdorffstraße 2-26, 13409 Berlin, Germany</span>
-            </a>  
+            </a>
           </li>
         </ul>
-      </address>  
+      </address>
     </div>
 
     <div class="contacts_right-side">
       <form class="contacts-form" name="contactForm">
         <div class="contacts-filds">
           <div class="contacts-fild">
-            <label for="name" class="contacts-label">Name*</label>
-            <input class="contacts-input-name" type="text" id="name" name="contacts_name" placeholder="Ann & Ian"
-              pattern="(^[a-zA-Z\s\.]{2,64}$)" required />
+            <label for="name"
+              class="contacts-label">Name*</label>
+            <input class="contacts-input-name"
+              type="text"
+              id="name"
+              name="contacts_name"
+              placeholder="Ann & Ian"
+              pattern="(^[a-zA-Z\s\.]{2,64}$)"
+              autocomplete="on"
+              required />
             <p class="text-invalid-name">Error Text</p>
           </div>
           <div class="contacts-fild">
-            <label for="phone" class="contacts-label">Phone*</label>
-            <input class="contacts-input-phone" type="tel" id="phone" name="contacts_phone" placeholder="380961234568"
-              pattern="(^[0-9]{12}$)" required />
+            <label for="phone"
+              class="contacts-label">Phone*</label>
+            <input class="contacts-input-phone"
+              type="tel"
+              id="phone"
+              name="contacts_phone"
+              placeholder="380961234568"
+              pattern="(^[0-9]{12}$)"
+              autocomplete="on"
+              required />
             <p class="text-invalid-phone">Error Text</p>
           </div>
           <div class="contacts-textarea contacts-fild">
             <label class="feedback-label" for="message">Message</label>
-            <textarea class="contacts-message" name="message" id="message" rows="10" minlength="3" maxlength="500"
+            <textarea class="contacts-message"
+              name="message"
+              id="message"
+              rows="10"
+              minlength="3"
+              maxlength="500"
               placeholder="Tell me a little about you and your special day. Don't forget to include your wedding date, venue,   and what you're most excited about..."></textarea>
             <p class="text-invalid-textarea">Error Text</p>
           </div>
@@ -64,7 +88,7 @@
           <div class="cnt-loader cnt-hidden"></div>
         </div>
       </form>
-    </div>  
+    </div>
   </div>
 
 </section>
