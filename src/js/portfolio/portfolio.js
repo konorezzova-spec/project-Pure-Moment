@@ -7,6 +7,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 const portfolioGallery = document.querySelector('.portfolio-gallery');
 const categoryButtonsContainer = document.querySelector('.portfolio-categories');
 const loadMoreButton = document.querySelector('.portfolio-load-more');
+const favourits = document.querySelector('.favourits');
 
 const categories = document.querySelector('.portfolio-categories');
 
@@ -15,9 +16,11 @@ let currentPage = 1;
 let loadedItemsCount = 0;
 const itemsPerPage = 9;
 const loadMoreItemsPerPage = 3;
+const STORAGE_KEY = 'wishList';
 
 categoryButtonsContainer.addEventListener('click', handleCategoryClick);
 loadMoreButton.addEventListener('click', handleLoadMoreItems);
+favourits.addEventListener('click', handlFavourits);
 
 document.addEventListener("DOMContentLoaded", () => {
   initializePortfolio();
@@ -93,4 +96,22 @@ function checkLoadedItemsCount(totalItems, loadedItemsCount) {
   } else {
     showLoadMoreBtn();
   }
+}
+
+function handlFavourits(event) {
+  event.preventDefault();
+  const wishList = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  
+  if (wishList.length > 0) {
+    clearGallery();
+    hideLoadMoreBtn();
+    createGallery(wishList);
+  } else {
+    iziToast.info({
+      title: 'info',
+      message: 'Empty',
+      position: 'center',
+    });
+  }
+
 }

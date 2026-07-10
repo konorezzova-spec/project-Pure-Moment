@@ -41,9 +41,9 @@ export function createCategoryButtons(categoriesData) {
 }
 
 function createGalleryItems({ img, title }) {
-   const liked = likes.includes(img);
+  const liked = isLiked(img);//likes.includes(img);
   return `<li class="portfolio-gallery-item"><button class="portfolio-heart-btn ${liked ? 'liked' : ''}" 
-        type="button" data-img="${img}" aria-label="${liked ? 'liked' : 'unlike'}">${likedSvg}</button>
+        type="button" data-img="${img}" data-title="${title}" aria-label="${liked ? 'liked' : 'unlike'}">${likedSvg}</button>
   <a href="${img}" data-lightbox="gallery"><img class="portfolio-img"src="${img}" alt="${title}" loading="lazy" decoding="async"></a>
   </li>`;
  }
@@ -102,18 +102,20 @@ function getCurrentImage() {
 }
 
 function isLiked(src) {
-  return likes.includes(src);
+  // return likes.includes(src);
+  return likes.some(item => item.img === src);
 }
 
 function saveLikes() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(likes));
 }
 
-function toggleLike(src) {
-  const index = likes.indexOf(src);
+function toggleLike({img, title}){
+  // const index = likes.indexOf(src);
+  const index = likes.findIndex(item => item.img === img);
 
   if (index === -1) {
-    likes.push(src);
+    likes.push({img, title});
   } else {
     likes.splice(index, 1);
   }
@@ -147,7 +149,7 @@ function initLightboxLikeButton() {
 
         if (!img) return;
 
-        toggleLike(img.src);
+        toggleLike({ img: img.src, title: img.alt });
         updateLikeButton();
         updateGalleryLikeButn(img.src)
       });
@@ -174,9 +176,9 @@ function handleGalleryLikeButtonClick(evt) {
   evt.preventDefault();
   evt.stopPropagation();
 
-  const { img } = btn.dataset;
+  const { img, title } = btn.dataset;
  
-  toggleLike(img);
+  toggleLike({ img, title });
   btn.classList.toggle('liked', isLiked(img));
 
   updateLikeButton();
