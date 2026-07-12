@@ -11,9 +11,11 @@ const favourits = document.querySelector('.favourits');
 
 const categories = document.querySelector('.portfolio-categories');
 
+
 let currentCategoryId = '';
 let currentPage = 1;
 let loadedItemsCount = 0;
+let totalItems = 0;
 const itemsPerPage = 9;
 const loadMoreItemsPerPage = 3;
 const STORAGE_KEY = 'wishList';
@@ -67,8 +69,11 @@ async function loadGallery(page, limit, categoryId = '') {
     createGallery(galleryItems.weddingPhotos);
 
     loadedItemsCount += limit;
+    totalItems = galleryItems.totalItems;
     
     checkLoadedItemsCount(galleryItems.totalItems, loadedItemsCount);
+
+    setProgress()
 
   } catch (error) {
   
@@ -98,6 +103,12 @@ function checkLoadedItemsCount(totalItems, loadedItemsCount) {
   }
 }
 
+function Progres() {
+  const progresBar = document.querySelector('.progres-loaded');
+  console.log(progresBar);
+  // progresBar.value = loadedItemsCount / totalItems * 100;
+ }
+  
 function handlFavourits(event) {
   event.preventDefault();
   const wishList = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
@@ -114,4 +125,16 @@ function handlFavourits(event) {
     });
   }
 
+  lightboxLikeButton();
+}
+
+function setProgress() {
+  const progresBar = document.querySelector('.progres-loaded');
+  const v = loadedItemsCount / totalItems * 100;
+  progresBar.value = v;
+  if (loadedItemsCount>=totalItems) {
+    progresBar.classList.add("hidden");
+  } else {
+    progresBar.classList.remove("hidden");
+  }
 }
