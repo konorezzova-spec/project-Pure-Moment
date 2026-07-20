@@ -123,11 +123,11 @@ function handlFavourits() {
   setActiveCategoryButton();
   favourits.classList.add('active');
   progresBar.classList.add('hidden');
+  clearGallery();
+  hideLoadMoreBtn();
   const wishList = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
   if (wishList.length > 0) {
-    clearGallery();
-    hideLoadMoreBtn();
     createGallery(wishList);
   } else {
     iziToast.info({
