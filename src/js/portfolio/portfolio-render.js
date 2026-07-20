@@ -8,6 +8,8 @@ const categoryButtons = document.getElementsByClassName('portfolio-category-btn'
 const loadMoreButton = document.querySelector('.portfolio-load-more');
 const loader = document.querySelector('.loader');
 
+const favouritsBtn = document.querySelector('.favourits');
+
 const lightbox = new SLBox(".portfolio-gallery a", {
   captionsData: "alt",
   captionDelay: 250,
@@ -33,6 +35,8 @@ const likedSvg = `
                    c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
         </svg>
       `;
+
+favouritsBtn.insertAdjacentHTML('afterbegin', likedSvg);
 export function createCategoryButtons(categoriesData) {
   const markup = categoriesData.map(category => {
     return `<li><button class="portfolio-category-btn" data-id="${category._id}">${category.category}</button></li>`;

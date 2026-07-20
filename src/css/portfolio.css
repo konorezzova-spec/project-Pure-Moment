@@ -262,6 +262,16 @@
 }
 
 /*#endregion progress*/
+
+.portfolio-wrap-category{
+  display: flex;
+  flex-direction: row;
+}
+
+.favourits {
+  color: var(--color-curious-blue);
+}
+
 .hidden {
   display: none;
 }

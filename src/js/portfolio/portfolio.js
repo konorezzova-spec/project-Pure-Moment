@@ -103,11 +103,11 @@ function checkLoadedItemsCount(totalItems, loadedItemsCount) {
   }
 }
 
-function Progres() {
-  const progresBar = document.querySelector('.progres-loaded');
-  console.log(progresBar);
-  // progresBar.value = loadedItemsCount / totalItems * 100;
- }
+// function Progres() {
+//   const progresBar = document.querySelector('.progres-loaded');
+//   console.log(progresBar);
+//   // progresBar.value = loadedItemsCount / totalItems * 100;
+//  }
   
 function handlFavourits(event) {
   event.preventDefault();
