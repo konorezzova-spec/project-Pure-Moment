@@ -1,16 +1,30 @@
-import { getPortfolioItemsCategories, getPortfolioGallery } from './portfolio-api.js';
-import { createCategoryButtons, createGallery, clearGallery, showLoadMoreBtn, hideLoadMoreBtn, showLoader, hideLoader, setActiveCategoryButton, lightboxLikeButton } from './portfolio-render.js';
+import {
+  getPortfolioItemsCategories,
+  getPortfolioGallery,
+} from './portfolio-api.js';
+import {
+  createCategoryButtons,
+  createGallery,
+  clearGallery,
+  showLoadMoreBtn,
+  hideLoadMoreBtn,
+  showLoader,
+  hideLoader,
+  setActiveCategoryButton,
+  lightboxLikeButton,
+} from './portfolio-render.js';
 
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 const portfolioGallery = document.querySelector('.portfolio-gallery');
-const categoryButtonsContainer = document.querySelector('.portfolio-categories');
+const categoryButtonsContainer = document.querySelector(
+  '.portfolio-categories'
+);
 const loadMoreButton = document.querySelector('.portfolio-load-more');
 const favourits = document.querySelector('.favourits');
 
 const categories = document.querySelector('.portfolio-categories');
-
 
 let currentCategoryId = '';
 let currentPage = 1;
@@ -24,7 +38,7 @@ categoryButtonsContainer.addEventListener('click', handleCategoryClick);
 loadMoreButton.addEventListener('click', handleLoadMoreItems);
 favourits.addEventListener('click', handlFavourits);
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   initializePortfolio();
   loadGallery(currentPage, itemsPerPage);
 });
@@ -42,16 +56,15 @@ async function handleCategoryClick(event) {
     lightboxLikeButton(); // Reset the initialized flag when changing categories
     loadGallery(currentPage, itemsPerPage, currentCategoryId);
   }
-};
+}
 
 async function initializePortfolio() {
   try {
     const categories = await getPortfolioItemsCategories();
-  
+
     createCategoryButtons(categories);
   } catch (error) {
-    
-     iziToast.error({
+    iziToast.error({
       title: 'Error',
       message: 'Error initializing portfolio:',
       position: 'topRight',
@@ -60,23 +73,20 @@ async function initializePortfolio() {
 }
 
 async function loadGallery(page, limit, categoryId = '') {
-
   showLoader();
-  
+
   try {
     const galleryItems = await getPortfolioGallery(page, limit, categoryId);
-    
+
     createGallery(galleryItems.weddingPhotos);
 
     loadedItemsCount += limit;
     totalItems = galleryItems.totalItems;
-    
+
     checkLoadedItemsCount(galleryItems.totalItems, loadedItemsCount);
 
-    setProgress()
-
+    setProgress();
   } catch (error) {
-  
     iziToast.error({
       title: 'Error',
       message: 'Something went wrong. Please try again later.',
@@ -95,9 +105,8 @@ function handleLoadMoreItems(event) {
 }
 
 function checkLoadedItemsCount(totalItems, loadedItemsCount) {
-    if (loadedItemsCount >= totalItems) {
+  if (loadedItemsCount >= totalItems) {
     hideLoadMoreBtn();
-   
   } else {
     showLoadMoreBtn();
   }
@@ -108,11 +117,14 @@ function checkLoadedItemsCount(totalItems, loadedItemsCount) {
 //   console.log(progresBar);
 //   // progresBar.value = loadedItemsCount / totalItems * 100;
 //  }
-  
-function handlFavourits(event) {
-  event.preventDefault();
+const progresBar = document.querySelector('.progres-loaded');
+
+function handlFavourits() {
+  setActiveCategoryButton();
+  favourits.classList.add('active');
+  progresBar.classList.add('hidden');
   const wishList = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-  
+
   if (wishList.length > 0) {
     clearGallery();
     hideLoadMoreBtn();
@@ -124,17 +136,15 @@ function handlFavourits(event) {
       position: 'center',
     });
   }
-
   lightboxLikeButton();
 }
 
 function setProgress() {
-  const progresBar = document.querySelector('.progres-loaded');
-  const v = loadedItemsCount / totalItems * 100;
+  const v = (loadedItemsCount / totalItems) * 100;
   progresBar.value = v;
-  if (loadedItemsCount>=totalItems) {
-    progresBar.classList.add("hidden");
+  if (loadedItemsCount >= totalItems) {
+    progresBar.classList.add('hidden');
   } else {
-    progresBar.classList.remove("hidden");
+    progresBar.classList.remove('hidden');
   }
 }
