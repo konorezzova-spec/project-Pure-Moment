@@ -13,7 +13,7 @@ Clone the project
 ```
 Go to the project directory
 ```bash
-  cd my-project
+  cd project-Pure-Moment
 ```
 Install dependencies
 ```bash
