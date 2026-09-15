@@ -1,29 +1,40 @@
-# Ласкаво просимо до Pure-Moment
-
-Цей проєкт було створено на основі шаблону
-[vanilla-app-template](https://github.com/goitacademy/vanilla-app-template) в
-рамках навчального блоку JavaScript школи [GoIT](https://goit.global/ua/)
+# Pure-Moment
+A single-page website for a wedding photographer.
+This project was created based on the [vanilla-app-template](https://github.com/goitacademy/vanilla-app-template) as part of the JavaScript course at [GoIT](https://goit.global/ua/)
 
 ---
+## Project Goal
+To gain hands-on experience with HTML, CSS, and JavaScript and apply theoretical knowledge in practice. The project also provided an opportunity to gain experience working with [Vite](https://vite.dev/) and [Node.js](https://nodejs.org/uk).
 
-## Мета проєкту
+## Run Locally
+Clone the project
+```bash
+  git clone https://link-to-project
+```
+Go to the project directory
+```bash
+  cd my-project
+```
+Install dependencies
+```bash
+  npm install
+```
+Start the server
+```bash
+  npm run dev
+```
 
-Знайомство з технологіями HTML, CSS, JavaScript та застосування теоретичних
-знань на практиці. Також отримати досвіт роботи з [Vite](https://vite.dev/) та
-[Node.js](https://nodejs.org/uk).
+## Features
+- Adaptive layout
+- Real-time DB requests
+- Contact form
+- Interactive feedbacks and portfolio
 
-## Бібліотеки, які ми використовували
-
+## Libraries Used
 - [axios](https://axios.rest/)
 - [Accordion-js](https://www.npmjs.com/package/accordion-js)
 - [Swiper](https://swiperjs.com/get-started)
 - [iziToast.js ](https://marcelodolza.github.io/iziToast/)
 - [simplelightbox](https://www.npmjs.com/package/simplelightbox)
 
-## Щоб переглянути живу сторінку
-
-перейдіть за посиланням секції About та насолоджуйтеся переглядом:
-
-![Посилання](./assets/посилання.webp)
-
-Або натисніть [Сюди](https://konorezzova-spec.github.io/project-Pure-Moment)
+## [Live Demo](https://konorezzova-spec.github.io/project-Pure-Moment)
